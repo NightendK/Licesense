@@ -14,7 +14,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 public class Cursa42KmView extends VerticalLayout {
 
     public Cursa42KmView() {
-        setSpacing(false);
+        /*setSpacing(false);
 
         Image img = new Image("images/empty-plant.png", "placeholder plant");
         img.setWidth("200px");
@@ -28,7 +28,11 @@ public class Cursa42KmView extends VerticalLayout {
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
+        getStyle().set("text-align", "center");*/
+
+        add(new Paragraph("This is the first paragraph introduces as a test for " +
+                "future implementations. Let's hope it works as i expect.\n " +
+                "\nLet's see if this also creates a new line xD"));  // only the new line doesn't work
     }
 
 }
