@@ -1,11 +1,7 @@
 package com.example.application.backend.Model;
-
 import com.example.application.backend.Enums.Sex;
 import com.example.application.backend.Enums.ShirtSize;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,20 +10,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "person")
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    private String Nume;
+    @Column(name = "lastName")
+    private String lastName;
 
-    private String Prenume;
+    @Column(name = "firstName")
+    private String firstName;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "sex")
     private Sex sex;
 
+    @Column(name = "shirtSize")
     private ShirtSize shirtSize;
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private User user;
 
 }
