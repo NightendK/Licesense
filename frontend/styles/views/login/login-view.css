@@ -1,6 +1,9 @@
 #login-view {
     display: grid;
-    padding: 80%;
+    padding: 30px;
+    vertical-align: center;
+    margin-left: 650px;
+    margin-right: 650px;
 }
 
 :host {
