@@ -26,10 +26,6 @@ import java.util.List;
 @Service
 public class AuthService {
 
-    public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
-
-    }
-
     public class AuthException extends Exception {
 
     }
@@ -50,37 +46,14 @@ public class AuthService {
     }
 
     public void createRoutes(Role role) {
-        /*getAuthorizedRoutes(role).stream()
-                .forEach(route ->
-                        RouteConfiguration.
-                        forSessionScope().
-                        setRoute(route.route, route.view, MainLayout.class));*/
 
         if(role.equals(Role.USER)) {
             RouteConfiguration.forSessionScope().setRoute("/home", HomeView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
-
-            /*RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);
-            RouteConfiguration.forSessionScope().setRoute("/copii", CursaCopiiView.class, MainLayout.class);*/
+            RouteConfiguration.forSessionScope().setRoute("/copii", CursaCopiiView.class, MainLayout.class);
         }
     }
-
-   /* public List<AuthorizedRoute> getAuthorizedRoutes(Role role) {
-
-        var routes = new ArrayList<AuthorizedRoute>();
-        if (role.equals(Role.USER)) {
-            routes.add(new AuthorizedRoute("/home", "Home", HomeView.class));
-            routes.add(new AuthorizedRoute("/42km", "Cursa 42Km", Cursa42KmView.class));
-            routes.add(new AuthorizedRoute("/21km", "Cursa 21Km", Cursa21KmView.class));
-            routes.add(new AuthorizedRoute("/10km", "Cursa 10Km", Cursa21KmView.class));
-            routes.add(new AuthorizedRoute("/copii", "Cursa Copii", CursaCopiiView.class));
-        } else if (role.equals(Role.ADMIN)) {
-            routes.add(new AuthorizedRoute("/home", "Home", HomeView.class));
-        }
-
-        return routes;
-    }*/
 
 }
