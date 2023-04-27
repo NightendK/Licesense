@@ -16,7 +16,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id")
     private Long id;
 
     @Column(name = "username")
@@ -27,10 +26,10 @@ public class User {
     private String passwordHash;
 
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "person_id")
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
     private Person person;
 
     public User(String username, String password, Role role) {
@@ -38,7 +37,10 @@ public class User {
         this.role = role;
         this.passwordSalt = RandomStringUtils.random(32);
         this.passwordHash = DigestUtils.sha1Hex(password + passwordSalt); // the append is done so that if 2
+
     }                       // users have the same hash they still will have a different password because of the passwordSalt
+
+
 
     public boolean checkPassword(String password) {
         return DigestUtils.sha1Hex(password + passwordSalt).equals(passwordHash);

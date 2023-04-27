@@ -10,7 +10,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 @PageTitle("Cursa Copii")
-@Route(value = "copii", layout = MainLayout.class)
+//@Route(value = "copii", layout = MainLayout.class)
 public class CursaCopiiView extends VerticalLayout {
 
     public CursaCopiiView() {

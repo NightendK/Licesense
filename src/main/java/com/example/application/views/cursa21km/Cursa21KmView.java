@@ -10,7 +10,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 @PageTitle("Cursa 21Km")
-@Route(value = "21km", layout = MainLayout.class)
+//@Route(value = "21km", layout = MainLayout.class)
 public class Cursa21KmView extends VerticalLayout {
 
     public Cursa21KmView() {
