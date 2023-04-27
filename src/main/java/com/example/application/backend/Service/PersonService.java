@@ -3,10 +3,8 @@ package com.example.application.backend.Service;
 import com.example.application.backend.Model.Person;
 import com.example.application.backend.Repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.vaadin.crudui.crud.CrudListener;
-
 import java.util.Collection;
 @Service
 @RequiredArgsConstructor

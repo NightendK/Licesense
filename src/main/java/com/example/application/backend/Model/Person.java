@@ -28,12 +28,15 @@ public class Person {
     private String email;
 
     @Column(name = "sex")
+    @Enumerated(EnumType.STRING)
     private Sex sex;
 
     @Column(name = "shirtSize")
+    @Enumerated(EnumType.STRING)
     private ShirtSize shirtSize;
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "u_id")
     private User user;
 
 }
