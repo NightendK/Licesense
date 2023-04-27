@@ -11,6 +11,7 @@ import com.example.application.views.cursa21km.Cursa21KmView;
 import com.example.application.views.cursa42km.Cursa42KmView;
 import com.example.application.views.cursacopii.CursaCopiiView;
 import com.example.application.views.home.HomeView;
+import com.example.application.views.logout.LogoutView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Header;
@@ -53,6 +54,7 @@ public class AuthService {
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/copii", CursaCopiiView.class, MainLayout.class);
+            RouteConfiguration.forSessionScope().setRoute("/logout", LogoutView.class, MainLayout.class);
         }
     }
 
