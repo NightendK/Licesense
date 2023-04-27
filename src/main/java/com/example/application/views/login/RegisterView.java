@@ -29,12 +29,12 @@ public class RegisterView extends Section {
         setId("register-view");
         setMaxWidth("100%");
         setWidth("360px");
-        getStyle().set("border", "1px solid var(--lumo-contrast-20pct)");
 
         H2 createNewTitle = new H2("Register");
         createNewTitle.getStyle().set("margin-left", "var(--lumo-space-m)")
                 .set("margin-right", "var(--lumo-space-m)");
         createNewTitle.setId("title");
+        createNewTitle.getStyle().set("text-align", "center");
         add(createNewTitle);
 
         scroller.setScrollDirection(Scroller.ScrollDirection.VERTICAL);
