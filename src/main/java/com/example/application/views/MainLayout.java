@@ -75,12 +75,6 @@ public class MainLayout extends AppLayout {
         nav.addItem(new AppNavItem("Cursa 10km", Cursa10kmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
         nav.addItem(new AppNavItem("Cursa Copii", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
 
-            /*nav.addItem(new AppNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create()));
-            nav.addItem(new AppNavItem("Cursa 42Km", Cursa42KmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
-            nav.addItem(new AppNavItem("Cursa 21Km", Cursa21KmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
-            nav.addItem(new AppNavItem("Cursa 10km", Cursa10kmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
-            nav.addItem(new AppNavItem("Cursa Copii", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create()));*/
-
         return nav;
     }
 
