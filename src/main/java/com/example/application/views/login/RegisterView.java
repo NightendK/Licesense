@@ -3,6 +3,7 @@ package com.example.application.views.login;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.component.icon.Icon;
@@ -13,6 +14,7 @@ import com.vaadin.flow.router.Route;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 @Route("/register")
+@CssImport("./styles/views/register/register-view.css")
 public class RegisterView extends Section {
 
     private final Scroller scroller = new Scroller();
@@ -32,21 +34,26 @@ public class RegisterView extends Section {
         H2 createNewTitle = new H2("Register");
         createNewTitle.getStyle().set("margin-left", "var(--lumo-space-m)")
                 .set("margin-right", "var(--lumo-space-m)");
+        createNewTitle.setId("title");
         add(createNewTitle);
 
         scroller.setScrollDirection(Scroller.ScrollDirection.VERTICAL);
 
         button42.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button42.setHeight("100px");
+        button42.setWidth("250px");
 
         button21.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button21.setHeight("100px");
+        button21.setWidth("250px");
 
         button10.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button10.setHeight("100px");
+        button10.setWidth("250px");
 
         buttonCopii.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         buttonCopii.setHeight("100px");
+        buttonCopii.setWidth("250px");
 
         buttons.setPadding(true);
         buttons.getStyle().set("display", "inline-flex");

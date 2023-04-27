@@ -1,0 +1,17 @@
+#register-view{
+    display: grid;
+    padding: 35px;
+    vertical-align: center;
+    margin-left: 650px;
+    margin-right: 650px;
+}
+
+:host {
+    display: block;
+    padding: var(--lumo-space-m) var(--lumo-space-l);
+}
+
+#title{
+    display: grid;
+    text-align: center;
+}
