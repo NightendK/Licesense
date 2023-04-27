@@ -42,18 +42,22 @@ public class RegisterView extends Section {
         button42.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button42.setHeight("100px");
         button42.setWidth("250px");
+        button42.setId("button42Km");
 
         button21.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button21.setHeight("100px");
         button21.setWidth("250px");
+        button21.setId("button21Km");
 
         button10.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button10.setHeight("100px");
         button10.setWidth("250px");
+        button10.setId("button10Km");
 
         buttonCopii.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         buttonCopii.setHeight("100px");
         buttonCopii.setWidth("250px");
+        buttonCopii.setId("buttonCopii");
 
         buttons.setPadding(true);
         buttons.getStyle().set("display", "inline-flex");

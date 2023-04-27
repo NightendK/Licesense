@@ -16,5 +16,23 @@
     display: grid;
     text-align: center;
     vertical-align: center;
+    --lumo-font-size-xxxl: "40px";
+    --lumo-line-height-m: 1.625;
 
+}
+
+#button42Km{
+    font-size: 20px;
+}
+
+#button21Km{
+    font-size: 20px;
+}
+
+#button10Km{
+    font-size: 20px;
+}
+
+#buttonCopii{
+    font-size: 20px;
 }
