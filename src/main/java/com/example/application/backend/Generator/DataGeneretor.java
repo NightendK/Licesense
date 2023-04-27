@@ -22,13 +22,13 @@ public class DataGeneretor implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         /*Person person = new Person();
-        person.setFirstName("Testare");
-        person.setLastName("Test");
-        person.setEmail("test@gmail.com");
-        person.setShirtSize(ShirtSize.L);
-        person.setSex(Sex.FEMEIE);
+        person.setFirstName("Andrei");
+        person.setLastName("Rosu");
+        person.setEmail("root@yahoo.com");
+        person.setShirtSize(ShirtSize.XS);
+        person.setSex(Sex.BARBAT);
 
-        User user = new User("test_oauth_1", "test",  Role.USER);
+        User user = new User("root", "root",  Role.ADMIN);
 
         person.setUser(user);
         personRepository.save(person);*/

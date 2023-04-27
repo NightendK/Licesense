@@ -15,6 +15,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import com.vaadin.flow.router.RouterLink;
 
 
 @Route(value = "/login")
@@ -37,7 +38,9 @@ public class LoginView extends Div {
                         } catch (AuthService.AuthException e) {
                             Notification.show("Wrong Credidentials!");
                         }
-                    })
+                    }),
+
+                    new RouterLink("Register", RegisterView.class)
             );
         }
 
