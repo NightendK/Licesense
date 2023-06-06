@@ -2,6 +2,7 @@ package com.example.application.views.login;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
@@ -11,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 @Route("/register")
@@ -43,6 +45,9 @@ public class RegisterView extends Section {
         button42.setHeight("100px");
         button42.setWidth("250px");
         button42.setId("button42Km");
+        button42.addClickListener(e -> {
+            UI.getCurrent().navigate(SignInView.class);
+        });
 
         button21.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());
         button21.setHeight("100px");
