@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
@@ -50,7 +51,6 @@ public class SignInView extends Section {
         verticalLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.AROUND);
         verticalLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         verticalLayout.add(lastName, firstName, email, comboBox, shirtBox, userName, passwordField, checkPassword);
-
 
         add(verticalLayout);
     }

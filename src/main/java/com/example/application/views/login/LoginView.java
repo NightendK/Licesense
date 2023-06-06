@@ -22,13 +22,17 @@ import com.vaadin.flow.router.RouterLink;
 @RouteAlias(value = "")
 @PageTitle("Login")
 @CssImport("./styles/views/login/login-view.css")
-public class LoginView extends Div {
+public class LoginView extends VerticalLayout {
         public LoginView(AuthService authService) {
             setId("login-view");
             var username = new TextField("Username");
+            username.setMaxWidth("250px");
             var password = new PasswordField("Password");
+            password.setMaxWidth("250px");
+            setAlignItems(FlexComponent.Alignment.CENTER);
+            setMaxWidth("200px");
             add(
-                    new H1("Welcome"),
+                    new H1("Marathon App"),
                     username,
                     password,
                     new Button("Login", buttonClickEvent -> {

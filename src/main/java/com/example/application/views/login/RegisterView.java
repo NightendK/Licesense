@@ -20,7 +20,7 @@ import org.vaadin.lineawesome.LineAwesomeIcon;
 public class RegisterView extends Section {
 
     private final Scroller scroller = new Scroller();
-    private final Button button42 = new Button("42Km Race" + "\n" + "45$");
+    private final Button button42 = new Button("42Km Race" + "\n" + " 45$");
     private final Button button21 = new Button("21Km Race");
     private final Button button10 = new Button("10Km Race");
     private final Button buttonCopii = new Button("Children Race");
