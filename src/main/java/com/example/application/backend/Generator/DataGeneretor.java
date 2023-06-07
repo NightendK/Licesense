@@ -28,7 +28,7 @@ public class DataGeneretor implements CommandLineRunner {
         person.setShirtSize(ShirtSize.XS);
         person.setSex(Sex.BARBAT);
 
-        User user = new User("root", "root",  Role.ADMIN);
+        User user = new User("andrei", "rosu",  Role.USER);
 
         person.setUser(user);
         personRepository.save(person);*/

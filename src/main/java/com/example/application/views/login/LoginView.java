@@ -2,11 +2,15 @@ package com.example.application.views.login;
 
 import com.example.application.backend.Service.AuthService;
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.login.LoginI18n;
+import com.vaadin.flow.component.login.LoginOverlay;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -22,31 +26,39 @@ import com.vaadin.flow.router.RouterLink;
 @RouteAlias(value = "")
 @PageTitle("Login")
 @CssImport("./styles/views/login/login-view.css")
-public class LoginView extends VerticalLayout {
+public class LoginView extends Composite<LoginOverlay> {
         public LoginView(AuthService authService) {
-            setId("login-view");
-            var username = new TextField("Username");
-            username.setMaxWidth("250px");
-            var password = new PasswordField("Password");
-            password.setMaxWidth("250px");
-            setAlignItems(FlexComponent.Alignment.CENTER);
-            setMaxWidth("200px");
-            add(
-                    new H1("Marathon App"),
-                    username,
-                    password,
-                    new Button("Login", buttonClickEvent -> {
-                        try {
-                            authService.authenticate(username.getValue(), password.getValue());
-                            UI.getCurrent().navigate("/home");
-                        } catch (AuthService.AuthException e) {
-                            Notification.show("Wrong Credidentials!");
-                        }
-                    }),
 
-                    new RouterLink("Register", RegisterView.class)
-            );
-        }
+        LoginI18n log = LoginI18n.createDefault();
+        LoginI18n.Form logForm = log.getForm();
+        logForm.setForgotPassword("Register");
+        log.setForm(logForm);
+
+        LoginOverlay loginOverlay = getContent();
+        loginOverlay.setI18n(log);
+        loginOverlay.setTitle("Marathon App");
+        loginOverlay.setDescription("Let's run");
+        loginOverlay.setOpened(true);
+
+        addClassName("login-overlay-view");
+        loginOverlay.getElement().getThemeList().add("dark");
+
+        loginOverlay.addLoginListener(event -> {
+            try {
+                authService.authenticate(event.getUsername(), event.getPassword());
+                UI.getCurrent().navigate("/home");
+            } catch (AuthService.AuthException e) {
+                Notification.show("Wrong Credidentials!");
+            }
+        });
+
+        loginOverlay.addForgotPasswordListener(e -> {
+            loginOverlay.close();
+            UI.getCurrent().navigate(RegisterView.class);
+        });
+
+    }
+
 
 }
 

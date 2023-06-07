@@ -33,6 +33,10 @@ public class Cursa42KmView extends VerticalLayout {
         add(new Paragraph("This is the first paragraph introduces as a test for " +
                 "future implementations. Let's hope it works as i expect.\n " +
                 "\nLet's see if this also creates a new line xD"));  // only the new line doesn't work
+
+        Image img = new Image("images/run.jpg", "run");
+        img.setWidth("200px");
+        add(img);
     }
 
 }
