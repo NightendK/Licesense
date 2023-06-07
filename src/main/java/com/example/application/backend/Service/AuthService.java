@@ -1,7 +1,12 @@
 package com.example.application.backend.Service;
 
+import com.example.application.backend.Enums.Race;
 import com.example.application.backend.Enums.Role;
+import com.example.application.backend.Enums.Sex;
+import com.example.application.backend.Enums.ShirtSize;
+import com.example.application.backend.Model.Person;
 import com.example.application.backend.Model.User;
+import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Repository.UserRepository;
 import com.example.application.views.MainLayout;
 import com.example.application.views.cursa10km.Cursa10kmView;
@@ -16,13 +21,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthService {
 
+
     public class AuthException extends Exception {
 
     }
     private final UserRepository userRepository;
 
-    public AuthService(UserRepository userRepository) {
+    private final PersonRepository personRepository;
+
+    public AuthService(UserRepository userRepository, PersonRepository personRepository) {
         this.userRepository = userRepository;
+        this.personRepository = personRepository;
     }
 
     public void authenticate(String username, String password) throws AuthException {
@@ -54,6 +63,24 @@ public class AuthService {
             RouteConfiguration.forSessionScope().setRoute("/copii", CursaCopiiView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/logout", LogoutView.class, MainLayout.class);
         }
+    }
+
+    public void signUp(String firstName, String lastName, String email,
+                       String userName, String password, String checkPassword,
+                       Sex sex, ShirtSize shirtSize, Race race) {
+
+        Person person = new Person();
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        person.setEmail(email);
+        person.setSex(sex);
+        person.setShirtSize(shirtSize);
+        person.setRace(race);
+
+        User user = new User(userName, password, Role.USER);
+        person.setUser(user);
+        personRepository.save(person);
+
     }
 
 }

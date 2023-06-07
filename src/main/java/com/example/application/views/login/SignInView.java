@@ -1,28 +1,31 @@
 package com.example.application.views.login;
 
 import com.example.application.backend.Enums.Race;
+import com.example.application.backend.Enums.Role;
 import com.example.application.backend.Enums.Sex;
 import com.example.application.backend.Enums.ShirtSize;
+import com.example.application.backend.Service.AuthService;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.PasswordField;
-import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-import java.text.Normalizer;
 
 @Route("/sign")
 @CssImport("./styles/views/sign/signIn-view.css")
 public class SignInView extends Section {
+
+    private final AuthService authService;
 
     private final TextField firstName = new TextField("Prenume");
     private final TextField lastName = new TextField("Nume");
@@ -39,7 +42,8 @@ public class SignInView extends Section {
 
     private final Button button = new Button("Sign In");
 
-    public SignInView() {
+    public SignInView(AuthService authService) {
+        this.authService = authService;
 
         email.setLabel("Adresa de email");
         email.setErrorMessage("Introduceti o adresa de email valida!");
@@ -75,6 +79,12 @@ public class SignInView extends Section {
         lastName.setTooltipText("Introduceti numele dumneavoastra de familie");
 
         VerticalLayout verticalLayout = createSignInForm();
+
+        button.addClickListener(e -> {
+            register(firstName.getValue(), lastName.getValue(), email.getValue(),
+                    userName.getValue(), passwordField.getValue(), checkPassword.getValue(),
+                    comboBox.getValue(), shirtBox.getValue(), raceBox.getValue());
+        });
         add(verticalLayout);
     }
 
@@ -133,6 +143,42 @@ public class SignInView extends Section {
                            horizontalLayout3, horizontalLayout4, horizontalLayout5);
 
         return verticalLayout;
+    }
+
+    private void register(String firstName, String lastName, String email,
+                          String userName, String password, String checkPassword,
+                          Sex sex, ShirtSize shirtSize, Race race) {
+
+        if (firstName.trim().isEmpty()) {
+            Notification.show("Enter your firstname!");
+        }
+
+        else if (lastName.trim().isEmpty()) {
+            Notification.show("Enter your lastname");
+        }
+
+        else if (email.trim().isEmpty()) {
+            Notification.show("Enter a valid email!");
+        }
+
+        else if (userName.trim().isEmpty()) {
+            Notification.show("Enter a username!");
+        }
+
+        else if (password.trim().isEmpty()) {
+            Notification.show("Enter a password!");
+        }
+
+        else if (!password.equals(checkPassword)) {
+            Notification.show("Passwords don't match!");
+        }
+        else {
+            authService.signUp(firstName, lastName, email,
+                    userName, password, checkPassword, sex, shirtSize, race);
+            Notification.show("Registration succesfull!");
+            authService.createRoutes(Role.USER);
+            UI.getCurrent().navigate("/home");
+        }
     }
 
 }
