@@ -1,11 +1,39 @@
-#firstName{
+#firstName {
     max-width: 200px;
 }
 
-#lastName{
+#lastName {
     max-width: 200px;
 }
 
-#email{
+#email {
     width: 400px;
+}
+
+#sexBox {
+    width: 200px;
+}
+
+#shirtBox {
+    width: 200px;
+}
+
+#raceBox {
+    width: 200px;
+}
+
+#userName {
+    max-width: 200px;
+}
+
+#password {
+    max-width: 200px;
+}
+
+#checkPassword {
+    max-width: 200px;
+}
+
+#button{
+    max-width: 300px;
 }

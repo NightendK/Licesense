@@ -3,6 +3,7 @@ package com.example.application.views.login;
 import com.example.application.backend.Enums.Race;
 import com.example.application.backend.Enums.Sex;
 import com.example.application.backend.Enums.ShirtSize;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -23,19 +24,20 @@ import java.text.Normalizer;
 @CssImport("./styles/views/sign/signIn-view.css")
 public class SignInView extends Section {
 
-    public TextField firstName = new TextField("Prenume");
-    public TextField lastName = new TextField("Nume");
+    private final TextField firstName = new TextField("Prenume");
+    private final TextField lastName = new TextField("Nume");
 
-    public EmailField email = new EmailField();
-    public ComboBox<Sex> comboBox = new ComboBox<>();
-    public ComboBox<ShirtSize> shirtBox = new ComboBox<>();
+    private final EmailField email = new EmailField();
+    private final ComboBox<Sex> comboBox = new ComboBox<>();
+    private final ComboBox<ShirtSize> shirtBox = new ComboBox<>();
 
-    public ComboBox<Race> raceBox = new ComboBox<>();
+    private final ComboBox<Race> raceBox = new ComboBox<>();
 
-    public TextField userName = new TextField("Username");
-    public PasswordField passwordField = new PasswordField("Password");
-    public PasswordField checkPassword = new PasswordField("Confirm Password");
+    private final TextField userName = new TextField("Username");
+    private final PasswordField passwordField = new PasswordField("Password");
+    private final PasswordField checkPassword = new PasswordField("Confirm Password");
 
+    private final Button button = new Button("Sign In");
 
     public SignInView() {
 
@@ -50,10 +52,17 @@ public class SignInView extends Section {
         firstName.setId("firstName");
         lastName.setId("lastName");
         email.setId("email");
-
+        comboBox.setId("sexBox");
+        shirtBox.setId("shirtBox");
+        raceBox.setId("raceBox");
+        userName.setId("userName");
+        passwordField.setId("password");
+        checkPassword.setId("checkPassword");
+        button.setId("button");
 
         comboBox.setLabel("Sex");
         comboBox.setItems(Sex.BARBAT, Sex.FEMEIE);
+
 
         shirtBox.setLabel("Dimensiunea tricoului");
         shirtBox.setItems(ShirtSize.XS, ShirtSize.S, ShirtSize.M,
@@ -65,9 +74,11 @@ public class SignInView extends Section {
         firstName.setTooltipText("Introduceti prenumele dumneavoastra");
         lastName.setTooltipText("Introduceti numele dumneavoastra de familie");
 
-        /*firstName.setMaxWidth("200px");
-        lastName.setMaxWidth("200px");
-        email.setMaxWidth("200px");*/
+        VerticalLayout verticalLayout = createSignInForm();
+        add(verticalLayout);
+    }
+
+    private VerticalLayout createSignInForm() {
 
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.setSizeFull();
@@ -89,8 +100,39 @@ public class SignInView extends Section {
         horizontalLayout1.setSpacing(true);
         horizontalLayout1.add(email);
 
-        verticalLayout.add(horizontalLayout, horizontalLayout1);
-        add(verticalLayout);
+        HorizontalLayout horizontalLayout2 = new HorizontalLayout();
+        horizontalLayout2.setSizeFull();
+        horizontalLayout2.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        horizontalLayout2.setAlignItems(FlexComponent.Alignment.CENTER);
+        horizontalLayout2.setSpacing(true);
+        horizontalLayout2.add(comboBox, shirtBox, raceBox);
+
+        HorizontalLayout horizontalLayout3 = new HorizontalLayout();
+        horizontalLayout3.setSizeFull();
+        horizontalLayout3.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        horizontalLayout3.setAlignItems(FlexComponent.Alignment.CENTER);
+        horizontalLayout3.setSpacing(true);
+        horizontalLayout3.add(userName);
+
+        HorizontalLayout horizontalLayout4 = new HorizontalLayout();
+        horizontalLayout4.setSizeFull();
+        horizontalLayout4.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        horizontalLayout4.setAlignItems(FlexComponent.Alignment.CENTER);
+        horizontalLayout4.setSpacing(true);
+        horizontalLayout4.add(passwordField, checkPassword);
+
+        HorizontalLayout horizontalLayout5= new HorizontalLayout();
+        horizontalLayout5.setSizeFull();
+        horizontalLayout5.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        horizontalLayout5.setAlignItems(FlexComponent.Alignment.CENTER);
+        horizontalLayout5.setSpacing(true);
+        horizontalLayout5.add(button);
+
+
+        verticalLayout.add(horizontalLayout, horizontalLayout1, horizontalLayout2,
+                           horizontalLayout3, horizontalLayout4, horizontalLayout5);
+
+        return verticalLayout;
     }
 
 }
