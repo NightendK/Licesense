@@ -162,6 +162,7 @@
   "@vaadin/vaadin-themable-mixin",
   "Frontend/styles/views/login/login-view.css",
   "Frontend/styles/views/register/register-view.css",
+  "Frontend/styles/views/sign/signIn-view.css",
   "@vaadin/grid/theme/lumo/vaadin-grid.js",
   "@vaadin/tooltip/theme/lumo/vaadin-tooltip.js",
   "@vaadin/grid/theme/lumo/vaadin-grid-column.js",
@@ -262,6 +263,7 @@
  "frontendHashes": {
   "styles/views/login/login-view.css": "1c94eced5cdc44d0ed7f18b088ee227a0e7111bc442d18e67a76fa81a3742e3b",
   "styles/views/register/register-view.css": "329ff214786e067236c5e0f4f3156b27c584947f749f565a97c1753a67354789",
+  "styles/views/sign/signIn-view.css": "ce8727460845443a4c916e8142cde91b575ed063f48e6ea9e553018992a4ee89",
   "comboBoxConnector.js": "1d004c3dae9c76f8bcc68678abe1b8f7bdc8b456f5c9c4c7f190df8ed25d66cd",
   "contextMenuConnector.js": "25a200f8086461635ddd92316ebeb5a868294c8650a190efbae120edb1088f4f",
   "contextMenuTargetConnector.js": "870f67643988dd5618c247bd3c28d843f70aa026ee89f44c3c7556b5e70856af",
@@ -287,7 +289,7 @@
   "marathonapp": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
  },
  "entryScripts": [
-  "VAADIN/build/indexhtml-d1ed6ebc.js"
+  "VAADIN/build/indexhtml-1aa6989f.js"
  ],
  "webComponents": [],
  "packageJsonHash": "e2f9bd0537429daef70d034743387d1b0d364b3c928f3367a27fb822af2042d8"
