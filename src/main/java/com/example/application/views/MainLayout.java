@@ -11,6 +11,7 @@ import com.example.application.views.cursa21km.Cursa21KmView;
 import com.example.application.views.cursa42km.Cursa42KmView;
 import com.example.application.views.cursacopii.CursaCopiiView;
 import com.example.application.views.home.HomeView;
+import com.example.application.views.logout.LogoutView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -68,13 +69,13 @@ public class MainLayout extends AppLayout {
         // AppNav is not yet an official component.
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
         AppNav nav = new AppNav();
-        User user = VaadinSession.getCurrent().getAttribute(User.class);
+
         nav.addItem(new AppNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create()));
         nav.addItem(new AppNavItem("Cursa 42Km", Cursa42KmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
         nav.addItem(new AppNavItem("Cursa 21Km", Cursa21KmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
         nav.addItem(new AppNavItem("Cursa 10km", Cursa10kmView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
         nav.addItem(new AppNavItem("Cursa Copii", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
-
+        nav.addItem(new AppNavItem("Logout", LogoutView.class, LineAwesomeIcon.RUNNING_SOLID.create()));
         return nav;
     }
 
