@@ -2,6 +2,7 @@ package com.example.application.views.login;
 
 import com.example.application.backend.Service.AuthService;
 import com.example.application.views.MainLayout;
+import com.example.application.views.register.RegisterView;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;

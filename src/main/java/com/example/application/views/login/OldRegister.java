@@ -1,23 +1,17 @@
 package com.example.application.views.login;
 
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Section;
-import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
-@Route("/register")
+//@Route("/register")
 @CssImport("./styles/views/register/register-view.css")
-public class RegisterView extends Section {
+public class OldRegister extends Section {
 
     private final Scroller scroller = new Scroller();
     private final Button button42 = new Button("42Km Race" + "\n" + " 45$");
@@ -27,7 +21,7 @@ public class RegisterView extends Section {
 
     public final VerticalLayout buttons = new VerticalLayout(button42, button21, button10, buttonCopii);
 
-    public RegisterView() {
+    public OldRegister() {
         setId("register-view");
         setMaxWidth("100%");
         setWidth("360px");
