@@ -160,6 +160,7 @@
  },
  "bundleImports": [
   "@vaadin/vaadin-themable-mixin",
+  "Frontend/styles/views/main/main-view.css",
   "Frontend/styles/views/login/login-view.css",
   "Frontend/styles/views/register/register-view.css",
   "Frontend/styles/views/sign/signIn-view.css",
@@ -261,6 +262,7 @@
   "Frontend/generated/jar-resources/virtualListConnector.js"
  ],
  "frontendHashes": {
+  "styles/views/main/main-view.css": "87166c51fa3e7499b7b96ad1ff2250f4e76548430d4777dbe2c50a70dee46120",
   "styles/views/login/login-view.css": "1c94eced5cdc44d0ed7f18b088ee227a0e7111bc442d18e67a76fa81a3742e3b",
   "styles/views/register/register-view.css": "329ff214786e067236c5e0f4f3156b27c584947f749f565a97c1753a67354789",
   "styles/views/sign/signIn-view.css": "036d5598885d9ad0e6965469305043d9777758af6aa8ada79aedc9b474799157",
@@ -289,7 +291,7 @@
   "marathonapp": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
  },
  "entryScripts": [
-  "VAADIN/build/indexhtml-38b32c2e.js"
+  "VAADIN/build/indexhtml-535bd417.js"
  ],
  "webComponents": [],
  "packageJsonHash": "e2f9bd0537429daef70d034743387d1b0d364b3c928f3367a27fb822af2042d8"
