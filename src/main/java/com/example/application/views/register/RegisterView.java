@@ -32,16 +32,25 @@ public class RegisterView extends AppLayout {
         footer.setId("footer");
 
         VerticalLayout footerLayout = new VerticalLayout();
+        VerticalLayout mainLayout = new VerticalLayout();
+        mainLayout.setId("main");
 
 
         H1 appTitle = new H1("Registration");
         appTitle.setId("title");
         appTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
 
-        TextArea text42 = new TextArea();
+        Label text42 = new Label();
         text42.setId("text_42");
-        text42.setValue("For participating at the marathon, you must pay a registration tax of 40$." + " \n" +
-                "After completing the required informations in the registration, you will be redirected to the payment window.");
+        text42.setText("For participating at one of the races, you must pay a registration fee. This fee includes " +
+                "taxes that cover presence of medical staff and refreshment zones but also the kit that you receive for the race." + " \n" +
+                "After completing the required fields in the registration form, you will be redirected to the checkout form to conclude the payment and finalize the payment.");
+
+       //
+
+        Label secondLabel = new Label();
+        secondLabel.setId("secondLabel");
+        secondLabel.setText("");
 
         Paragraph footerText42 = new Paragraph();
         footerText42.setId("footerText42");
@@ -68,8 +77,10 @@ public class RegisterView extends AppLayout {
         footerLayout.add(appTitle, footerText42, footerText21, footerText10, footerTextChildren, label);
         footer.add(footerLayout);
 
-        text42.setReadOnly(true);
-        setContent(text42);
+        mainLayout.setSizeFull();
+        mainLayout.add(text42);
+
+        setContent(mainLayout);
         addToDrawer(footer);
 
 

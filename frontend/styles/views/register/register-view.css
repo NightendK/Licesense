@@ -7,14 +7,11 @@
 }
 
 #text_42 {
-    width: 1500px;
-    font-size: 22px;
+    width: 1630px;
+    font-size: 23px;
     font-family: "Times New Roman";
     font-style: normal;
-    color: palegoldenrod;
-    border-style: none;
-    border-width: 0px;
-    border-color: white;
+    color: #604060;
 }
 
 /*#header {
@@ -94,4 +91,8 @@
     font-size: 18px;
     border-style: ridge;
     border-width: medium;
+}
+
+#main {
+    background-color: #aaaaaa;
 }
