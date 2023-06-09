@@ -60,7 +60,9 @@ public class MainLayout extends AppLayout {
 
         profile.setId("userProfile");
         profile.addClickListener(e -> {
-            Notification.show("Soon to redirect to user home page");
+            //Notification.show("Soon to redirect to user home page");
+            UI.getCurrent().close();
+            UI.getCurrent().navigate("/profile");
         });
 
         addToNavbar(true, toggle, viewTitle, profile);
