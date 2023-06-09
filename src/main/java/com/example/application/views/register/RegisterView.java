@@ -50,7 +50,55 @@ public class RegisterView extends AppLayout {
 
         Label secondLabel = new Label();
         secondLabel.setId("secondLabel");
-        secondLabel.setText("");
+        secondLabel.setText("Race Schedule");
+
+        Label title42 = new Label();
+        title42.setId("title42");
+        title42.setText("> Marathon (42Km Race): ");
+
+        Label date42 = new Label();
+        date42.setId("date42");
+        date42.setText("Start date: September 24th, 10:00:00");
+
+        Label startLocation42 = new Label();
+        startLocation42.setId("startLocation");
+        startLocation42.setText("Start location: Piața Presei Libere 1, București");
+
+        Label startLocation21 = new Label();
+        startLocation21.setId("startLocation");
+        startLocation21.setText("Start location: Piața Presei Libere 1, București");
+
+        Label startLocation10 = new Label();
+        startLocation10.setId("startLocation");
+        startLocation10.setText("Start location: Piața Presei Libere 1, București");
+
+        Label startLocationCh = new Label();
+        startLocationCh.setId("startLocation");
+        startLocationCh.setText("Start location: Piața Presei Libere 1, București");
+
+        Label title21 = new Label();
+        title21.setId("title21");
+        title21.setText("> Semi-Marathon (21Km Race): ");
+
+        Label date21= new Label();
+        date21.setId("date21");
+        date21.setText("Start date: September 25th, 10:30:00");
+
+        Label title10 = new Label();
+        title10.setId("title10");
+        title10.setText("> Quarter-Marathon (10Km Race): ");
+
+        Label date10= new Label();
+        date10.setId("date10");
+        date10.setText("Start date: September 27th, 09:00:00");
+
+        Label titleCh = new Label();
+        titleCh.setId("titleCh");
+        titleCh.setText("> Children's Race (1Km Race): ");
+
+        Label dateCh= new Label();
+        dateCh.setId("dateCh");
+        dateCh.setText("Start date: September 27th, 10:30:00");
 
         Paragraph footerText42 = new Paragraph();
         footerText42.setId("footerText42");
@@ -78,7 +126,10 @@ public class RegisterView extends AppLayout {
         footer.add(footerLayout);
 
         mainLayout.setSizeFull();
-        mainLayout.add(text42);
+        mainLayout.add(text42, secondLabel, title42, date42, startLocation42,
+                                            title21, date21, startLocation21,
+                                            title10, date10, startLocation10,
+                                            titleCh, dateCh, startLocationCh);
 
         setContent(mainLayout);
         addToDrawer(footer);
@@ -111,6 +162,13 @@ public class RegisterView extends AppLayout {
         curse.add(cursa10);
         curse.add(cursaCopii);
         curse.setId("navbar");
+
+        Image logo = new Image("images/marathon-logo-new.png", "logo");
+        logo.setWidth("130px");
+        logo.setHeight("75px");
+        logo.setId("logo");
+
+        addToNavbar(logo);
 
         addToNavbar(curse);
 

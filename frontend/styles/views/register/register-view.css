@@ -14,9 +14,89 @@
     color: #604060;
 }
 
-/*#header {
+#secondLabel {
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-}*/
+#title42 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date42 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#title21 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date21 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#title10 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date10 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#titleCh {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#dateCh {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#startLocation {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    background-color: #aaaaaa;
+}
 
 #footer {
     font-weight: bold;
@@ -95,4 +175,9 @@
 
 #main {
     background-color: #aaaaaa;
+}
+
+#logo {
+    margin-right: 0px;
+    margin-left: 55px;
 }
