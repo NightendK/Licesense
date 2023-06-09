@@ -265,9 +265,9 @@
  "frontendHashes": {
   "styles/views/main/main-view.css": "87166c51fa3e7499b7b96ad1ff2250f4e76548430d4777dbe2c50a70dee46120",
   "styles/views/login/login-view.css": "1c94eced5cdc44d0ed7f18b088ee227a0e7111bc442d18e67a76fa81a3742e3b",
-  "styles/views/register/register-view.css": "e38d47add7176b013d33a197cb8f4489b0c6b358651b1969eb7c3f38089033eb",
+  "styles/views/register/register-view.css": "1ae5d47fd22475e197aff6a9922d9e8e21fca4ee31e597836aaa12ea4e3c273e",
   "styles/views/sign/signIn-view.css": "036d5598885d9ad0e6965469305043d9777758af6aa8ada79aedc9b474799157",
-  "styles/vaadin-app-layout-styles.css": "a9a21eb4e573387b937545c9e4de063bee1c5d3cd7a4d8cce5a6b5cd45f64a5a",
+  "styles/vaadin-app-layout-styles.css": "dd94b00ab9318fd27dfe0eb47e7346a8920a3e9d4d9cea970726d0dc24da4c88",
   "comboBoxConnector.js": "1d004c3dae9c76f8bcc68678abe1b8f7bdc8b456f5c9c4c7f190df8ed25d66cd",
   "contextMenuConnector.js": "25a200f8086461635ddd92316ebeb5a868294c8650a190efbae120edb1088f4f",
   "contextMenuTargetConnector.js": "870f67643988dd5618c247bd3c28d843f70aa026ee89f44c3c7556b5e70856af",
@@ -293,7 +293,7 @@
   "marathonapp": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
  },
  "entryScripts": [
-  "VAADIN/build/indexhtml-0e55741e.js"
+  "VAADIN/build/indexhtml-bd7fa885.js"
  ],
  "webComponents": [],
  "packageJsonHash": "e2f9bd0537429daef70d034743387d1b0d364b3c928f3367a27fb822af2042d8"
