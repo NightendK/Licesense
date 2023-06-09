@@ -1,5 +1,6 @@
 package com.example.application.backend.Generator;
 
+import com.example.application.backend.Enums.Race;
 import com.example.application.backend.Enums.Role;
 import com.example.application.backend.Enums.Sex;
 import com.example.application.backend.Enums.ShirtSize;
@@ -24,9 +25,10 @@ public class DataGeneretor implements CommandLineRunner {
         /*Person person = new Person();
         person.setFirstName("Andrei");
         person.setLastName("Rosu");
-        person.setEmail("root@yahoo.com");
+        person.setEmail("andrei@yahoo.com");
         person.setShirtSize(ShirtSize.XS);
         person.setSex(Sex.BARBAT);
+        person.setRace(Race.CURSA_21KM);
 
         User user = new User("andrei", "rosu",  Role.USER);
 

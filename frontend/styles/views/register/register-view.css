@@ -1,37 +1,183 @@
-#register-view{
-    display: grid;
-    padding: 35px;
-    vertical-align: center;
-    margin-left: 650px;
-    margin-right: 650px;
-    align-items: center;
+#title {
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-:host {
-    display: block;
-    padding: var(--lumo-space-m) var(--lumo-space-l);
+#text_42 {
+    width: 1630px;
+    font-size: 23px;
+    font-family: "Times New Roman";
+    font-style: normal;
+    color: #604060;
 }
 
-#title{
-    display: grid;
-    text-align: center;
-    vertical-align: center;
-    --lumo-font-size-xxxl: "40px";
-    --lumo-line-height-m: 1.625;
+#secondLabel {
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-#button42Km{
+#title42 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date42 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#title21 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date21 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#title10 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#date10 {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#titleCh {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    border-width: thick;
+    border-color: #604060;
+    border-style: ridge;
+}
+
+#dateCh {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+}
+
+#startLocation {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #604060;
+    font-weight: bold;
+    background-color: #aaaaaa;
+}
+
+#footer {
+    font-weight: bold;
+    color: palegoldenrod;
+}
+
+#cursa42 {
+    font-style: normal;
+    font-weight: bold;
+    color: palegoldenrod;
     font-size: 20px;
 }
 
-#button21Km{
+#cursa21 {
+    font-style: normal;
+    font-weight: bold;
+    color: palegoldenrod;
     font-size: 20px;
 }
 
-#button10Km{
+#cursa10 {
+    font-style: normal;
+    font-weight: bold;
+    color: palegoldenrod;
     font-size: 20px;
 }
 
-#buttonCopii{
+#cursaCopii{
+    font-style: normal;
+    font-weight: bold;
+    color: palegoldenrod;
     font-size: 20px;
+}
+
+#footerText42 {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-size: 25px;
+}
+
+#footerText21 {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-size: 25px;
+}
+
+#footerText10 {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-size: 25px;
+}
+
+#footerTextChildren {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-size: 25px;
+}
+
+#label {
+    font-weight: lighter;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+    font-size: 18px;
+    border-style: ridge;
+    border-width: medium;
+}
+
+#main {
+    background-color: #aaaaaa;
+}
+
+#logo {
+    margin-right: 0px;
+    margin-left: 55px;
 }

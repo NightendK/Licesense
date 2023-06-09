@@ -16,12 +16,17 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Header;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.server.VaadinConfig;
 import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.vaadin.lineawesome.LineAwesomeIcon;
@@ -31,11 +36,12 @@ import java.util.ArrayList;
 /**
  * The main view is a top-level placeholder for other views.
  */
+@CssImport("./styles/views/main/main-view.css")
 public class MainLayout extends AppLayout {
 
     private H2 viewTitle;
     private final AuthService authService;
-
+    private final Icon profile = new Icon(VaadinIcon.USER);
     private static final long serialVersionUID = 1113799434508676095L;
 
     public MainLayout(AuthService authService) {
@@ -52,7 +58,12 @@ public class MainLayout extends AppLayout {
         viewTitle = new H2();
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
 
-        addToNavbar(true, toggle, viewTitle);
+        profile.setId("userProfile");
+        profile.addClickListener(e -> {
+            Notification.show("Soon to redirect to user home page");
+        });
+
+        addToNavbar(true, toggle, viewTitle, profile);
     }
 
     private void addDrawerContent() {
@@ -66,8 +77,7 @@ public class MainLayout extends AppLayout {
     }
 
     private AppNav createNavigation() {
-        // AppNav is not yet an official component.
-        // For documentation, visit https://github.com/vaadin/vcf-nav#readme
+
         AppNav nav = new AppNav();
 
         nav.addItem(new AppNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create()));

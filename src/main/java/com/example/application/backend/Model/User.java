@@ -21,7 +21,7 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    private String passwordSalt;
+    private String passwordSalt; // random generated value for securing the hash value
 
     private String passwordHash;
 
