@@ -263,7 +263,7 @@
   "Frontend/generated/jar-resources/virtualListConnector.js"
  ],
  "frontendHashes": {
-  "styles/views/main/main-view.css": "87166c51fa3e7499b7b96ad1ff2250f4e76548430d4777dbe2c50a70dee46120",
+  "styles/views/main/main-view.css": "cc1973cd31f5c8fc5ad7569d57c290a7e40f56b1b239b45b9e0853b2ebbdb3aa",
   "styles/views/login/login-view.css": "1c94eced5cdc44d0ed7f18b088ee227a0e7111bc442d18e67a76fa81a3742e3b",
   "styles/views/register/register-view.css": "1ae5d47fd22475e197aff6a9922d9e8e21fca4ee31e597836aaa12ea4e3c273e",
   "styles/views/sign/signIn-view.css": "036d5598885d9ad0e6965469305043d9777758af6aa8ada79aedc9b474799157",
@@ -293,7 +293,7 @@
   "marathonapp": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
  },
  "entryScripts": [
-  "VAADIN/build/indexhtml-bd7fa885.js"
+  "VAADIN/build/indexhtml-93ced38f.js"
  ],
  "webComponents": [],
  "packageJsonHash": "e2f9bd0537429daef70d034743387d1b0d364b3c928f3367a27fb822af2042d8"

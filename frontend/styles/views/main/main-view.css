@@ -1,4 +1,62 @@
-#userProfile {
-    margin-right: 0px;
-    margin-left: 1500px;
+#profileIcon {
+    color: palegoldenrod;
+    height: 15px;
+}
+
+#appName {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#homeNav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#race42Nav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#race21Nav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#race10Nav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#chNav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#logout {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#viewTitle {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
+}
+
+#toggle {
+    color: palegoldenrod;
+}
+
+#idNav {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: palegoldenrod;
 }

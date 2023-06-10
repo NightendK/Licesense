@@ -15,7 +15,9 @@ import com.example.application.views.cursa42km.Cursa42KmView;
 import com.example.application.views.cursacopii.CursaCopiiView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
+import com.example.application.views.profile.ProfileView;
 import com.vaadin.flow.router.RouteConfiguration;
+import com.vaadin.flow.server.VaadinSession;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -48,6 +50,7 @@ public class AuthService {
 
         if(role.equals(Role.USER)) {
             RouteConfiguration.forSessionScope().setRoute("/home", HomeView.class, MainLayout.class);
+            RouteConfiguration.forSessionScope().setRoute("/profile", ProfileView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);
@@ -57,6 +60,7 @@ public class AuthService {
 
         else if (role.equals(Role.ADMIN)) {
             RouteConfiguration.forSessionScope().setRoute("/home", HomeView.class, MainLayout.class);
+            RouteConfiguration.forSessionScope().setRoute("/profile", ProfileView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);
@@ -80,6 +84,8 @@ public class AuthService {
         User user = new User(userName, password, Role.USER);
         person.setUser(user);
         personRepository.save(person);
+
+        VaadinSession.getCurrent().setAttribute("username", userName);
 
     }
 

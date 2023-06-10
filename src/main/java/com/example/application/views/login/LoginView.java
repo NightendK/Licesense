@@ -52,6 +52,8 @@ public class LoginView extends Composite<LoginOverlay> {
                 UI.getCurrent().navigate("/home");
             } catch (AuthService.AuthException e) {
                 Notification.show("Wrong Credidentials!");
+                loginOverlay.close();
+                loginOverlay.setOpened(true);
             }
         });
 
