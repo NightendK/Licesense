@@ -173,8 +173,11 @@
     border-width: medium;
 }
 
-#main {
-
+#acordion {
+    font-size: 26px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-weight: bold;
 }
 
 #logo {

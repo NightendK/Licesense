@@ -3,8 +3,10 @@ package com.example.application.views.register;
 import com.example.application.views.login.SignInView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -54,7 +56,7 @@ public class RegisterView extends AppLayout {
 
         Label title42 = new Label();
         title42.setId("title42");
-        title42.setText("> Marathon (42Km Race): ");
+        title42.setText("Marathon (42Km Race): ");
 
         Label date42 = new Label();
         date42.setId("date42");
@@ -78,7 +80,7 @@ public class RegisterView extends AppLayout {
 
         Label title21 = new Label();
         title21.setId("title21");
-        title21.setText("> Semi-Marathon (21Km Race): ");
+        title21.setText("Semi-Marathon (21Km Race): ");
 
         Label date21= new Label();
         date21.setId("date21");
@@ -86,7 +88,7 @@ public class RegisterView extends AppLayout {
 
         Label title10 = new Label();
         title10.setId("title10");
-        title10.setText("> Quarter-Marathon (10Km Race): ");
+        title10.setText("Quarter-Marathon (10Km Race): ");
 
         Label date10= new Label();
         date10.setId("date10");
@@ -94,7 +96,7 @@ public class RegisterView extends AppLayout {
 
         Label titleCh = new Label();
         titleCh.setId("titleCh");
-        titleCh.setText("> Children's Race (1Km Race): ");
+        titleCh.setText("Children's Race (1Km Race): ");
 
         Label dateCh= new Label();
         dateCh.setId("dateCh");
@@ -125,13 +127,54 @@ public class RegisterView extends AppLayout {
         footerLayout.add(appTitle, footerText42, footerText21, footerText10, footerTextChildren, label);
         footer.add(footerLayout);
 
-        mainLayout.setSizeFull();
+        /*mainLayout.setSizeFull();
         mainLayout.add(text42, secondLabel, title42, date42, startLocation42,
                                             title21, date21, startLocation21,
                                             title10, date10, startLocation10,
-                                            titleCh, dateCh, startLocationCh);
+                                            titleCh, dateCh, startLocationCh);*/
 
-        setContent(mainLayout);
+        VerticalLayout race42 = new VerticalLayout();
+        race42.setSpacing(false);
+        race42.setPadding(false);
+        race42.add(date42, startLocation42);
+
+        Details details42 = new Details();
+        details42.setSummary(title42);
+        details42.addContent(race42);
+
+        VerticalLayout race21 = new VerticalLayout();
+        race21.setSpacing(false);
+        race21.setPadding(false);
+        race21.add(date21, startLocation21);
+
+        Details details21 = new Details();
+        details21.setSummary(title21);
+        details21.addContent(race21);
+
+        VerticalLayout race10 = new VerticalLayout();
+        race10.setSpacing(false);
+        race10.setPadding(false);
+        race10.add(date10, startLocation10);
+
+        Details details10 = new Details();
+        details10.setSummary(title10);
+        details10.addContent(race10);
+
+        VerticalLayout raceCh = new VerticalLayout();
+        raceCh.setSpacing(false);
+        raceCh.setPadding(false);
+        raceCh.add(dateCh, startLocationCh);
+
+        Details detailsCh = new Details();
+        detailsCh.setSummary(titleCh);
+        detailsCh.addContent(raceCh);
+
+        VerticalLayout detailsLayout = new VerticalLayout();
+        detailsLayout.setSizeFull();
+        detailsLayout.add(details42, details21, details10, detailsCh);
+
+
+        setContent(detailsLayout);
         addToDrawer(footer);
 
 
