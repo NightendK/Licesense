@@ -21,6 +21,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.VaadinSession;
 
 
 @Route(value = "/login")
@@ -47,9 +48,12 @@ public class LoginView extends Composite<LoginOverlay> {
         loginOverlay.addLoginListener(event -> {
             try {
                 authService.authenticate(event.getUsername(), event.getPassword());
+                VaadinSession.getCurrent().setAttribute("username", event.getUsername());
                 UI.getCurrent().navigate("/home");
             } catch (AuthService.AuthException e) {
                 Notification.show("Wrong Credidentials!");
+                loginOverlay.close();
+                loginOverlay.setOpened(true);
             }
         });
 
