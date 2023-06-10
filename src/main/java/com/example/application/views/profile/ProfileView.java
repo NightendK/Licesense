@@ -9,6 +9,7 @@ import com.example.application.backend.Repository.UserRepository;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.notification.Notification;
@@ -35,6 +36,7 @@ public class ProfileView extends VerticalLayout {
     private Label raceLabel = new Label();
     private Label kitLabel = new Label();
     private Avatar avatar = new Avatar();
+    private Image shirt = new Image();
     public ProfileView(UserRepository userRepository, PersonRepository personRepository) {
 
         this.userRepository = userRepository;
@@ -42,6 +44,18 @@ public class ProfileView extends VerticalLayout {
 
         setSizeFull();
         setAlignItems(Alignment.AUTO);
+
+        shirt.setSrc("images/raceShirt.png");
+        shirt.setId("shirt");
+        shirt.setHeight("300px");
+
+        Label shirtLabel = new Label();
+        shirtLabel.setId("shirtLabel");
+        shirtLabel.setText("Race shirt");
+
+        Details shirtDetail = new Details();
+        shirtDetail.setSummary(shirtLabel);
+        shirtDetail.addContent(shirt);
 
         VaadinSession session = VaadinSession.getCurrent();
         try {
@@ -107,6 +121,6 @@ public class ProfileView extends VerticalLayout {
             Notification.show("User not identified");
         }
 
-        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel);
+        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel, shirtDetail);
     }
 }
