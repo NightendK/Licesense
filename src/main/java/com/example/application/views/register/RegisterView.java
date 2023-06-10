@@ -1,5 +1,6 @@
 package com.example.application.views.register;
 
+import com.example.application.views.login.LoginView;
 import com.example.application.views.login.SignInView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
@@ -210,6 +211,9 @@ public class RegisterView extends AppLayout {
         logo.setWidth("130px");
         logo.setHeight("75px");
         logo.setId("logo");
+        logo.addClickListener(e -> {
+            UI.getCurrent().navigate(LoginView.class);
+        });
 
         addToNavbar(logo);
 

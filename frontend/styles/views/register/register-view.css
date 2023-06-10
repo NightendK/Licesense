@@ -33,7 +33,7 @@
     font-size: 26px;
     font-family: "Times New Roman";
     color: #212f43;
-    font-weight: bold;
+    font-style: italic;
 }
 
 #title21 {
@@ -48,7 +48,7 @@
     font-size: 26px;
     font-family: "Times New Roman";
     color: #212f43;
-    font-weight: bold;
+    font-style: italic;
 }
 
 #title10 {
@@ -62,7 +62,7 @@
     font-size: 26px;
     font-family: "Times New Roman";
     color: #212f43;
-    font-weight: bold;
+    font-style: italic;
 }
 
 #titleCh {
@@ -76,14 +76,14 @@
     font-size: 26px;
     font-family: "Times New Roman";
     color: #212f43;
-    font-weight: bold;
+    font-style: italic;
 }
 
 #startLocation {
     font-size: 26px;
     font-family: "Times New Roman";
     color: #212f43;
-    font-weight: bold;
+    font-style: italic;
 }
 
 #footer {
@@ -132,32 +132,28 @@
 }
 
 #footerText42 {
-    font-weight: bold;
-    font-style: normal;
+    font-style: italic;
     font-family: "Times New Roman";
     color: palegoldenrod;
     font-size: 25px;
 }
 
 #footerText21 {
-    font-weight: bold;
-    font-style: normal;
+    font-style: italic;
     font-family: "Times New Roman";
     color: palegoldenrod;
     font-size: 25px;
 }
 
 #footerText10 {
-    font-weight: bold;
-    font-style: normal;
+    font-style: italic;
     font-family: "Times New Roman";
     color: palegoldenrod;
     font-size: 25px;
 }
 
 #footerTextChildren {
-    font-weight: bold;
-    font-style: normal;
+    font-style: italic;
     font-family: "Times New Roman";
     color: palegoldenrod;
     font-size: 25px;

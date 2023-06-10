@@ -47,7 +47,7 @@ public class ProfileView extends VerticalLayout {
 
         shirt.setSrc("images/raceShirt.png");
         shirt.setId("shirt");
-        shirt.setHeight("300px");
+        shirt.setHeight("450px");
 
         Label shirtLabel = new Label();
         shirtLabel.setId("shirtLabel");
