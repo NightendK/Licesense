@@ -176,8 +176,7 @@ public class SignInView extends Section {
             authService.signUp(firstName, lastName, email,
                     userName, password, checkPassword, sex, shirtSize, race);
             Notification.show("Registration succesfull!");
-            authService.createRoutes(Role.USER);
-            UI.getCurrent().navigate("/home");
+            UI.getCurrent().navigate("/checkout");
         }
     }
 

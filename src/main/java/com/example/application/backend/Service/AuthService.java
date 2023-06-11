@@ -31,6 +31,8 @@ public class AuthService {
 
     private final PersonRepository personRepository;
 
+    private final Person person = new Person();
+
     public AuthService(UserRepository userRepository, PersonRepository personRepository) {
         this.userRepository = userRepository;
         this.personRepository = personRepository;
@@ -73,7 +75,6 @@ public class AuthService {
                        String userName, String password, String checkPassword,
                        Sex sex, ShirtSize shirtSize, Race race) {
 
-        Person person = new Person();
         person.setFirstName(firstName);
         person.setLastName(lastName);
         person.setEmail(email);
@@ -83,10 +84,13 @@ public class AuthService {
 
         User user = new User(userName, password, Role.USER);
         person.setUser(user);
-        personRepository.save(person);
-
         VaadinSession.getCurrent().setAttribute("username", userName);
+        VaadinSession.getCurrent().setAttribute("person", person);
 
+    }
+
+    public Person getPerson() {
+        return person;
     }
 
 }
