@@ -5,6 +5,7 @@ import com.example.application.backend.Model.Person;
 import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Service.AuthService;
 import com.example.application.views.register.RegisterView;
+import com.itextpdf.text.DocumentException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -15,6 +16,7 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextArea;
@@ -41,6 +43,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Position;
 import com.vaadin.flow.theme.lumo.LumoUtility.TextColor;
 import org.aspectj.weaver.ast.Not;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -154,6 +157,7 @@ public class CheckoutView extends Div {
 
         email.setRequiredIndicatorVisible(true);
         email.addClassNames(Margin.Bottom.SMALL);
+        email.setPlaceholder("nume@mail.com");
 
         personalDetails.add(stepOne, header, name, email);
         return personalDetails;
@@ -267,14 +271,25 @@ public class CheckoutView extends Div {
                     cardHolder.getValue(), expirationMonth.getValue(), expirationYear.getValue(), securityCode.getValue());
 
             if (flag) {
-                Notification.show("Form was not completed rightly");
+                Notification error = new Notification();
+                error.show("Form was not completed rightly");
+                error.addThemeVariants(NotificationVariant.LUMO_ERROR);
             }
             else if (!flag) {
-                Notification.show("Payment was made!");
+                Notification succes = new Notification();
+                succes.show("Payment was made!");
+                succes.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 person = (Person) VaadinSession.getCurrent().getAttribute("person");
                 personRepository.save(person);
                 authService.createRoutes(Role.USER);
                 UI.getCurrent().navigate("/home");
+                /*try {
+                    authService.generatePDF();
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                } catch (DocumentException ex) {
+                    throw new RuntimeException(ex);
+                }*/
             }
         });
 

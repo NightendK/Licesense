@@ -16,9 +16,18 @@ import com.example.application.views.cursacopii.CursaCopiiView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfDocument;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import org.springframework.stereotype.Service;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 
 @Service
 public class AuthService {
@@ -91,6 +100,21 @@ public class AuthService {
 
     public Person getPerson() {
         return person;
+    }
+
+    public void generatePDF() throws FileNotFoundException, DocumentException {
+
+        String fileLocation = "C:\\Users\\Admin\\Desktop\\Chitanta.pdf";
+        Document document = new Document();
+        PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(fileLocation));
+        document.open();
+        document.addTitle("My first PDF");
+        document.addSubject("Using iText");
+        document.addKeywords("Java, PDF, iText");
+        document.addAuthor("Lars Vogel");
+        document.addCreator("Lars Vogel");
+        document.add(new Paragraph("This is a demo"));
+        document.close();
     }
 
 }
