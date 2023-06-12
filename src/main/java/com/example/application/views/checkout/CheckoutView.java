@@ -1,11 +1,16 @@
 package com.example.application.views.checkout;
 
+import com.example.application.backend.Enums.Race;
 import com.example.application.backend.Enums.Role;
 import com.example.application.backend.Model.Person;
 import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Service.AuthService;
 import com.example.application.views.register.RegisterView;
+import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -41,12 +46,17 @@ import com.vaadin.flow.theme.lumo.LumoUtility.MaxWidth;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
 import com.vaadin.flow.theme.lumo.LumoUtility.Position;
 import com.vaadin.flow.theme.lumo.LumoUtility.TextColor;
-import org.aspectj.weaver.ast.Not;
+
+
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
 
 @Route("/checkout")
 @CssImport("./styles/views/checkout/checkout-view.css")
@@ -277,19 +287,19 @@ public class CheckoutView extends Div {
             }
             else if (!flag) {
                 Notification succes = new Notification();
-                succes.show("Payment was made!");
                 succes.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                succes.show("Payment was made!");
                 person = (Person) VaadinSession.getCurrent().getAttribute("person");
                 personRepository.save(person);
                 authService.createRoutes(Role.USER);
-                UI.getCurrent().navigate("/home");
-                /*try {
-                    authService.generatePDF();
+                try {
+                    generatePDF();
                 } catch (FileNotFoundException ex) {
                     throw new RuntimeException(ex);
                 } catch (DocumentException ex) {
                     throw new RuntimeException(ex);
-                }*/
+                }
+                UI.getCurrent().navigate("/home");
             }
         });
 
@@ -404,5 +414,71 @@ public class CheckoutView extends Div {
             Notification.show("Please enter your city code.");
         }
 
+    }
+
+    public void generatePDF() throws FileNotFoundException, DocumentException {
+
+        String payedValue = "";
+        person = (Person) VaadinSession.getCurrent().getAttribute("person");
+
+        if (person.getRace().equals(Race.CURSA_42KM)) {
+            payedValue = Person.CURSA_42KM_VALUE;
+        }
+
+        else if (person.getRace().equals(Race.CURSA_21KM)) {
+            payedValue = Person.CURSA_21KM_VALUE;
+        }
+
+        else if (person.getRace().equals(Race.CURSA_10KM)) {
+            payedValue = Person.CURSA_10KM_VALUE;
+        }
+
+        else if (person.getRace().equals(Race.CURSA_COPII)) {
+            payedValue = Person.CURSA_COPII_VALUE;
+        }
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        Font titleFont = new Font(Font.FontFamily.TIMES_ROMAN, 19, Font.BOLD);
+        Font contentFont = new Font(Font.FontFamily.TIMES_ROMAN, 15);
+
+        String fileLocation = "C:\\Users\\Admin\\Desktop\\Receipt" + "_" + person.getFirstName() + person.getLastName() +".pdf";
+        Document document = new Document();
+        PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(fileLocation));
+        document.open();
+
+
+
+        com.itextpdf.text.Paragraph title = new com.itextpdf.text.Paragraph();
+        title.add(new com.itextpdf.text.Paragraph("Receipt\n\n\n", titleFont));
+        document.add(title);
+
+
+        com.itextpdf.text.Paragraph firstContent = new com.itextpdf.text.Paragraph();
+        firstContent.add(new com.itextpdf.text.Paragraph("The following item has been purchased:\n", contentFont));
+        document.add(firstContent);
+
+        com.itextpdf.text.Paragraph secondContent = new com.itextpdf.text.Paragraph();
+        secondContent.add(new com.itextpdf.text.Paragraph("Race : " + person.getRace() + "\n" +
+                "Name : " + name.getValue() + "\n" + "Email : " + email.getValue() + "\n" +
+                "Payed ammount : " + payedValue + "\n\n", contentFont));
+        document.add(secondContent);
+
+        com.itextpdf.text.Paragraph thirdContent = new com.itextpdf.text.Paragraph();
+        thirdContent.add(new com.itextpdf.text.Paragraph("Date of the purchase : " + dtf.format(now) + "\n\n", contentFont));
+        document.add(thirdContent);
+
+        com.itextpdf.text.Paragraph fourthContent = new com.itextpdf.text.Paragraph();
+        fourthContent.add(new com.itextpdf.text.Paragraph("Receipt address informations: \n", contentFont));
+        document.add(fourthContent);
+
+        com.itextpdf.text.Paragraph fifthContent = new com.itextpdf.text.Paragraph();
+        fifthContent.add(new com.itextpdf.text.Paragraph("Country : " + countrySelect.getValue() + "\n" +
+                "City : " + city.getValue() + "\n" +
+                "Address : " + address.getValue() + "\n", contentFont));
+        document.add(fifthContent);
+
+        document.close();
     }
 }

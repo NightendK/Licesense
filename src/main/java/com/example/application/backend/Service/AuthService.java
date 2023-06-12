@@ -102,19 +102,4 @@ public class AuthService {
         return person;
     }
 
-    public void generatePDF() throws FileNotFoundException, DocumentException {
-
-        String fileLocation = "C:\\Users\\Admin\\Desktop\\Chitanta.pdf";
-        Document document = new Document();
-        PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(fileLocation));
-        document.open();
-        document.addTitle("My first PDF");
-        document.addSubject("Using iText");
-        document.addKeywords("Java, PDF, iText");
-        document.addAuthor("Lars Vogel");
-        document.addCreator("Lars Vogel");
-        document.add(new Paragraph("This is a demo"));
-        document.close();
-    }
-
 }

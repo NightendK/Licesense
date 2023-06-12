@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "person")
 public class Person {
 
-    private static final String CURSA_42KM_VALUE = "40";
-    private static final String CURSA_21KM_VALUE = "25";
-    private static final String CURSA_10KM_VALUE = "15";
-    private static final String CURSA_COPII_VALUE = "7";
+    public static final String CURSA_42KM_VALUE = "40$";
+    public static final String CURSA_21KM_VALUE = "25$";
+    public static final String CURSA_10KM_VALUE = "15$";
+    public static final String CURSA_COPII_VALUE = "7$";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
