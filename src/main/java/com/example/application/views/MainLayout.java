@@ -1,6 +1,9 @@
 package com.example.application.views;
 
 
+import com.example.application.backend.Enums.Role;
+import com.example.application.backend.Model.User;
+import com.example.application.backend.Repository.UserRepository;
 import com.example.application.backend.Service.AuthService;
 import com.example.application.components.appnav.AppNav;
 import com.example.application.components.appnav.AppNavItem;
@@ -8,6 +11,7 @@ import com.example.application.views.cursa10km.Cursa10kmView;
 import com.example.application.views.cursa21km.Cursa21KmView;
 import com.example.application.views.cursa42km.Cursa42KmView;
 import com.example.application.views.cursacopii.CursaCopiiView;
+import com.example.application.views.grid.GridView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
@@ -32,13 +36,11 @@ import java.io.Serial;
  */
 @CssImport("./styles/views/main/main-view.css")
 public class MainLayout extends AppLayout {
-
     private H2 viewTitle;
     private final AuthService authService;
     private final Icon profileIcon = new Icon(VaadinIcon.USER);
     @Serial
     private static final long serialVersionUID = 1113799434508676095L;
-
     private final AppNavItem homeItem = new AppNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create());
     private final AppNavItem race42Item = new AppNavItem("Cursa 42Km", Cursa42KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem race21Item = new AppNavItem("Cursa 21Km", Cursa21KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
@@ -46,11 +48,13 @@ public class MainLayout extends AppLayout {
     private final AppNavItem raceChItem = new AppNavItem("Cursa Copii", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem logout = new AppNavItem("Logout", LogoutView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem profile = new AppNavItem("Profile", ProfileView.class, profileIcon);
+    private final AppNavItem grid = new AppNavItem("Grid", GridView.class, LineAwesomeIcon.COG_SOLID.create());
 
     public MainLayout(AuthService authService) {
 
         homeItem.setId("homeNav");
         profile.setId("idNav");
+        grid.setId("grid");
         profileIcon.setId("profileIcon");
         race42Item.setId("race42Nav");
         race21Item.setId("race21Nav");
@@ -89,13 +93,26 @@ public class MainLayout extends AppLayout {
 
         AppNav nav = new AppNav();
 
-        nav.addItem(homeItem);
-        nav.addItem(profile);
-        nav.addItem(race42Item);
-        nav.addItem(race21Item);
-        nav.addItem(race10Item);
-        nav.addItem(raceChItem);
-        nav.addItem(logout);
+        String username = UI.getCurrent().getSession().getAttribute("username").toString();
+
+        if (username.equals("root")) {
+            nav.addItem(homeItem);
+            nav.addItem(grid);
+            nav.addItem(race42Item);
+            nav.addItem(race21Item);
+            nav.addItem(race10Item);
+            nav.addItem(raceChItem);
+            nav.addItem(logout);
+        } else {
+            nav.addItem(homeItem);
+            nav.addItem(profile);
+            nav.addItem(race42Item);
+            nav.addItem(race21Item);
+            nav.addItem(race10Item);
+            nav.addItem(raceChItem);
+            nav.addItem(logout);
+        }
+
         return nav;
     }
 
