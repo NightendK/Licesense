@@ -128,7 +128,6 @@ public class CheckoutView extends Div {
                 Margin.Horizontal.AUTO, Padding.Bottom.LARGE, Padding.Horizontal.LARGE);
 
         content.add(createCheckoutForm());
-        content.add(createAside());
         add(content);
     }
 
@@ -305,26 +304,6 @@ public class CheckoutView extends Div {
 
         footer.add(cancel, pay);
         return footer;
-    }
-
-    private Aside createAside() {
-        Aside aside = new Aside();
-        aside.addClassNames(Background.CONTRAST_5, BoxSizing.BORDER, Padding.LARGE, BorderRadius.LARGE,
-                Position.STICKY);
-        Header headerSection = new Header();
-        headerSection.addClassNames(Display.FLEX, AlignItems.CENTER, JustifyContent.BETWEEN, Margin.Bottom.MEDIUM);
-        H3 header = new H3("Order");
-        header.addClassNames(Margin.NONE);
-
-        headerSection.add(header);
-
-        UnorderedList ul = new UnorderedList();
-        ul.addClassNames(ListStyleType.NONE, Margin.NONE, Padding.NONE, Display.FLEX, FlexDirection.COLUMN, Gap.MEDIUM);
-
-        ul.add(createListItem("", "", ""));
-
-        aside.add(headerSection, ul);
-        return aside;
     }
 
     private ListItem createListItem(String primary, String secondary, String price) {
