@@ -16,9 +16,18 @@ import com.example.application.views.cursacopii.CursaCopiiView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfDocument;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import org.springframework.stereotype.Service;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 
 @Service
 public class AuthService {
@@ -30,6 +39,8 @@ public class AuthService {
     private final UserRepository userRepository;
 
     private final PersonRepository personRepository;
+
+    private final Person person = new Person();
 
     public AuthService(UserRepository userRepository, PersonRepository personRepository) {
         this.userRepository = userRepository;
@@ -73,7 +84,6 @@ public class AuthService {
                        String userName, String password, String checkPassword,
                        Sex sex, ShirtSize shirtSize, Race race) {
 
-        Person person = new Person();
         person.setFirstName(firstName);
         person.setLastName(lastName);
         person.setEmail(email);
@@ -83,10 +93,13 @@ public class AuthService {
 
         User user = new User(userName, password, Role.USER);
         person.setUser(user);
-        personRepository.save(person);
-
         VaadinSession.getCurrent().setAttribute("username", userName);
+        VaadinSession.getCurrent().setAttribute("person", person);
 
+    }
+
+    public Person getPerson() {
+        return person;
     }
 
 }

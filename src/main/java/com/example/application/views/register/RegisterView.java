@@ -1,22 +1,20 @@
 package com.example.application.views.register;
 
+import com.example.application.views.SignIn.SignInView10;
+import com.example.application.views.SignIn.SignInView21;
+import com.example.application.views.SignIn.SignInViewChildren;
 import com.example.application.views.login.LoginView;
-import com.example.application.views.login.SignInView;
-import com.vaadin.flow.component.Component;
+import com.example.application.views.SignIn.SignInView42;
 import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.*;
-import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
-import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
-import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 @Route("/register")
@@ -25,10 +23,10 @@ public class RegisterView extends AppLayout {
 
     AppLayout appLayout = new AppLayout();
 
-    private Tab cursa42 = new Tab(new RouterLink("Cursa 42Km", SignInView.class));
-    private Tab cursa21 = new Tab(new RouterLink("Cursa 21Km", SignInView.class));
-    private Tab cursa10 = new Tab(new RouterLink("Cursa 10Km", SignInView.class));
-    private Tab cursaCopii = new Tab(new RouterLink("Cursa copii", SignInView.class));
+    private Tab cursa42 = new Tab(new RouterLink("Cursa 42Km", SignInView42.class));
+    private Tab cursa21 = new Tab(new RouterLink("Cursa 21Km", SignInView21.class));
+    private Tab cursa10 = new Tab(new RouterLink("Cursa 10Km", SignInView10.class));
+    private Tab cursaCopii = new Tab(new RouterLink("Cursa copii", SignInViewChildren.class));
     RegisterView() {
 
         Footer footer = new Footer();
@@ -180,22 +178,22 @@ public class RegisterView extends AppLayout {
 
 
         cursa42.addAttachListener(e -> {
-            UI.getCurrent().navigate(SignInView.class);
+            UI.getCurrent().navigate(SignInView42.class);
         });
         cursa42.setId("cursa42");
 
         cursa21.addAttachListener(e -> {
-            UI.getCurrent().navigate(SignInView.class);
+            UI.getCurrent().navigate(SignInView21.class);
         });
         cursa21.setId("cursa21");
 
         cursa10.addAttachListener(e -> {
-            UI.getCurrent().navigate(SignInView.class);
+            UI.getCurrent().navigate(SignInView10.class);
         });
         cursa10.setId("cursa10");
 
         cursaCopii.addAttachListener(e -> {
-            UI.getCurrent().navigate(SignInView.class);
+            UI.getCurrent().navigate(SignInViewChildren.class);
         });
         cursaCopii.setId("cursaCopii");
 
