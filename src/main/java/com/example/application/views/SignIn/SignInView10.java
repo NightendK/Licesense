@@ -1,7 +1,6 @@
-package com.example.application.views.login;
+package com.example.application.views.SignIn;
 
 import com.example.application.backend.Enums.Race;
-import com.example.application.backend.Enums.Role;
 import com.example.application.backend.Enums.Sex;
 import com.example.application.backend.Enums.ShirtSize;
 import com.example.application.backend.Service.AuthService;
@@ -20,29 +19,23 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-
-@Route("/sign")
+@Route("/sign10")
 @CssImport("./styles/views/sign/signIn-view.css")
-public class SignInView extends Section {
+public class SignInView10 extends Section {
 
     private final AuthService authService;
-
     private final TextField firstName = new TextField("Prenume");
     private final TextField lastName = new TextField("Nume");
-
     private final EmailField email = new EmailField();
     private final ComboBox<Sex> comboBox = new ComboBox<>();
     private final ComboBox<ShirtSize> shirtBox = new ComboBox<>();
-
     private final ComboBox<Race> raceBox = new ComboBox<>();
-
     private final TextField userName = new TextField("Username");
     private final PasswordField passwordField = new PasswordField("Password");
     private final PasswordField checkPassword = new PasswordField("Confirm Password");
-
     private final Button button = new Button("Sign In");
 
-    public SignInView(AuthService authService) {
+    public SignInView10(AuthService authService) {
         this.authService = authService;
 
         email.setLabel("Adresa de email");
@@ -70,10 +63,12 @@ public class SignInView extends Section {
 
         shirtBox.setLabel("Dimensiunea tricoului");
         shirtBox.setItems(ShirtSize.XS, ShirtSize.S, ShirtSize.M,
-                          ShirtSize.L, ShirtSize.XL, ShirtSize.XXL);
+                ShirtSize.L, ShirtSize.XL, ShirtSize.XXL);
 
         raceBox.setLabel("Cursa");
-        raceBox.setItems(Race.CURSA_42KM, Race.CURSA_21KM, Race.CURSA_10KM, Race.CURSA_COPII);
+        raceBox.setItems(Race.CURSA_10KM);
+        raceBox.setValue(Race.CURSA_10KM);
+        raceBox.setReadOnly(true);
 
         firstName.setTooltipText("Introduceti prenumele dumneavoastra");
         lastName.setTooltipText("Introduceti numele dumneavoastra de familie");
@@ -140,7 +135,7 @@ public class SignInView extends Section {
 
 
         verticalLayout.add(horizontalLayout, horizontalLayout1, horizontalLayout2,
-                           horizontalLayout3, horizontalLayout4, horizontalLayout5);
+                horizontalLayout3, horizontalLayout4, horizontalLayout5);
 
         return verticalLayout;
     }

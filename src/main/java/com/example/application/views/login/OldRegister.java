@@ -1,5 +1,6 @@
 package com.example.application.views.login;
 
+import com.example.application.views.SignIn.SignInView42;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
@@ -40,7 +41,7 @@ public class OldRegister extends Section {
         button42.setWidth("250px");
         button42.setId("button42Km");
         button42.addClickListener(e -> {
-            UI.getCurrent().navigate(SignInView.class);
+            UI.getCurrent().navigate(SignInView42.class);
         });
 
         button21.setIcon(LineAwesomeIcon.RUNNING_SOLID.create());

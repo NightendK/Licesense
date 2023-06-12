@@ -1,39 +1,93 @@
 #firstName {
     max-width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #lastName {
     max-width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #email {
     width: 400px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #sexBox {
     width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #shirtBox {
     width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #raceBox {
     width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #userName {
     max-width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #password {
     max-width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
 
 #checkPassword {
     max-width: 200px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
 }
+
 
 #button{
     max-width: 300px;
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    font-size: 15px;
+}
+
+#signView {
 }
