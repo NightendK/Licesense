@@ -269,7 +269,7 @@
   "styles/views/main/main-view.css": "e108d5a040c9a06775ee8fab7e1de1bd4d1a33acd196fccc67c8adb3d5a654e8",
   "styles/views/sign/signIn-view.css": "f9af78fb3058f96feb246556ddee3c47fce4dab8175d87528d3edf0687f39cda",
   "styles/views/checkout/checkout-view.css": "dd7ff6184452831315b11fc05d29abe42707365bcda4050848b7528ed57ecf29",
-  "styles/views/cursa42/cursa42-view.css": "0b462e0ae86bbe4916cb477f12a9e4a626dddebc2ba4cd0e84e66e4800c815ca",
+  "styles/views/cursa42/cursa42-view.css": "c6c21c2fafaec390d16703a63f06ca1b7ea4d06a905af982fc6372b1c9ae147d",
   "styles/views/login/login-view.css": "1c94eced5cdc44d0ed7f18b088ee227a0e7111bc442d18e67a76fa81a3742e3b",
   "styles/views/register/register-view.css": "bca43baf4789479e48c2191b0f0d816dc0886af732a843e102d98c036f6b36ac",
   "styles/views/profile/profile-view.css": "954fee8ed5bf39a236995f2bc5e5be96156c00f68074bcf94f5f18e41984d76e",
@@ -299,7 +299,7 @@
   "marathonapp": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
  },
  "entryScripts": [
-  "VAADIN/build/indexhtml-1e875aa7.js"
+  "VAADIN/build/indexhtml-9ab0a7f2.js"
  ],
  "webComponents": [],
  "packageJsonHash": "e2f9bd0537429daef70d034743387d1b0d364b3c928f3367a27fb822af2042d8"
