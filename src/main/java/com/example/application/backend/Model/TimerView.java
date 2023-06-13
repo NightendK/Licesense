@@ -11,6 +11,11 @@ import java.util.Date;
 @Route("/time")
 public class TimerView extends VerticalLayout {
     public static int SECONDS_IN_A_DAY = 24 * 60 * 60;
+
+    public String date = "";
+
+    private Label time = new Label();
+
     public TimerView() {
 
         var ui = UI.getCurrent();
@@ -19,8 +24,26 @@ public class TimerView extends VerticalLayout {
         marathonDay.set(Calendar.DAY_OF_MONTH, 24);
         marathonDay.set(Calendar.MONTH, 8);
         marathonDay.set(Calendar.YEAR, 2023);
+        ui.setPollInterval(1000);
+        add(time);
+        ui.addPollListener( e -> {
+            Calendar today = Calendar.getInstance();
+            Long diff = marathonDay.getTimeInMillis() - today.getTimeInMillis();
 
-        Calendar today = Calendar.getInstance();
+            Long diffSec = diff / 1000;
+
+            Long days = diffSec / SECONDS_IN_A_DAY;
+            Long secondsDay = diffSec % SECONDS_IN_A_DAY;
+            Long seconds = secondsDay % 60;
+            Long minutes = (secondsDay / 60) % 60;
+            Long hours = (secondsDay / 3600); // % 24 not needed
+
+            date = new String(days.toString() + ":" + hours.toString() + ":" + minutes.toString() + ":" + seconds.toString());
+            time.setText(date);
+        });
+
+
+        /*Calendar today = Calendar.getInstance();
         Long diff = marathonDay.getTimeInMillis() - today.getTimeInMillis();
 
         Long diffSec = diff / 1000;
@@ -31,12 +54,12 @@ public class TimerView extends VerticalLayout {
         Long minutes = (secondsDay / 60) % 60;
         Long hours = (secondsDay / 3600); // % 24 not needed
 
-        String date = new String(days.toString() + ":" + hours.toString() + ":" + minutes.toString() + ":" + seconds.toString());
+        String date = new String(days.toString() + ":" + hours.toString() + ":" + minutes.toString() + ":" + seconds.toString());*/
 
-        ui.access(() -> {
+        /*ui.access(() -> {
            add(new Label(date));
            ui.push();
-        });
+        });*/
     }
 
 

@@ -6,6 +6,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -24,7 +25,12 @@ public class Cursa42KmView extends VerticalLayout {
     private Label limitTime = new Label();
     private Label startLocation = new Label();
     private Image raceImage = new Image("images/Cursa42.png", "race");
-    public static int SECONDS_IN_A_DAY = 24 * 60 * 60;
+    private static int SECONDS_IN_A_DAY = 24 * 60 * 60;
+    private Label counter = new Label();
+    private Label daysField = new Label();
+    private TextField hoursField = new TextField();
+    private TextField minField = new TextField();
+    private TextField secField = new TextField();
 
     public Cursa42KmView() {
 
@@ -62,6 +68,8 @@ public class Cursa42KmView extends VerticalLayout {
         horizontalLayout.setAlignItems(Alignment.CENTER);
         horizontalLayout.setId("timerLayout");
 
+        counter.setId("counter");
+
         var ui = UI.getCurrent();
         Calendar marathonDay = Calendar.getInstance();
         marathonDay.setTime(new Date(0));
@@ -69,24 +77,36 @@ public class Cursa42KmView extends VerticalLayout {
         marathonDay.set(Calendar.MONTH, 8);
         marathonDay.set(Calendar.YEAR, 2023);
 
-        Calendar today = Calendar.getInstance();
-        Long diff = marathonDay.getTimeInMillis() - today.getTimeInMillis();
+        daysField.setId("daysField");
+        hoursField.setLabel("Hours");
+        minField.setLabel("Minutes");
+        secField.setLabel("Seconds");
 
-        Long diffSec = diff / 1000;
+        ui.setPollInterval(1000);
+        ui.addPollListener(e -> {
 
-        Long days = diffSec / SECONDS_IN_A_DAY;
-        Long secondsDay = diffSec % SECONDS_IN_A_DAY;
-        Long seconds = secondsDay % 60;
-        Long minutes = (secondsDay / 60) % 60;
-        Long hours = (secondsDay / 3600); // % 24 not needed
+            Calendar today = Calendar.getInstance();
 
-        String date = new String("Days:" + days.toString() + "  hours:" + hours.toString() + "  minutes:" + minutes.toString() + "  seconds:" + seconds.toString());
+            Long diff = marathonDay.getTimeInMillis() - today.getTimeInMillis();
+            Long diffSec = diff / 1000;
 
-        ui.access(() -> {
-            horizontalLayout.add(new Label(date));
-            ui.push();
+            Long days = diffSec / SECONDS_IN_A_DAY;
+            Long secondsDay = diffSec % SECONDS_IN_A_DAY;
+            Long seconds = secondsDay % 60;
+            Long minutes = (secondsDay / 60) % 60;
+            Long hours = (secondsDay / 3600);
+
+           /* String date = new String("Days:" + days.toString() + "  hours:" + hours.toString() + "  minutes:" + minutes.toString() + "  seconds:" + seconds.toString());
+            counter.setText(date);*/
+
+            daysField.setText(days.toString() + " \n Days");;
+            hoursField.setValue(hours.toString());
+            minField.setValue(minutes.toString());
+            secField.setValue(seconds.toString());
+
         });
 
+        horizontalLayout.add(daysField, hoursField, minField, secField);
         add(horizontalLayout);
 
 
