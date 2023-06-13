@@ -1,9 +1,5 @@
 package com.example.application.views;
 
-
-import com.example.application.backend.Enums.Role;
-import com.example.application.backend.Model.User;
-import com.example.application.backend.Repository.UserRepository;
 import com.example.application.backend.Service.AuthService;
 import com.example.application.components.appnav.AppNav;
 import com.example.application.components.appnav.AppNavItem;

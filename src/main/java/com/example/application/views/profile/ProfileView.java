@@ -8,6 +8,8 @@ import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Repository.UserRepository;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.Image;
@@ -19,7 +21,6 @@ import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
 
-import java.awt.*;
 
 @Route("/profile")
 @CssImport("./styles/views/profile/profile-view.css")
@@ -37,6 +38,9 @@ public class ProfileView extends VerticalLayout {
     private Label kitLabel = new Label();
     private Avatar avatar = new Avatar();
     private Image shirt = new Image();
+    private Button delButton = new Button("Delete Acccount");
+    private Button updateButton = new Button("Modify");
+
     public ProfileView(UserRepository userRepository, PersonRepository personRepository) {
 
         this.userRepository = userRepository;
@@ -121,6 +125,37 @@ public class ProfileView extends VerticalLayout {
             Notification.show("User not identified");
         }
 
-        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel, shirtDetail);
+        delButton.setId("delButton");
+        updateButton.setId("updateButton");
+
+        delButton.addClickListener(e -> {
+            ConfirmDialog dialog = new ConfirmDialog();
+            dialog.setHeader("Delete account");
+            dialog.setText("You are about to delete your account. By doing this your place in the race will be removed. " +
+                    "Are you sure you want to proceed?");
+
+            dialog.setCancelable(true);
+            dialog.setRejectable(false);
+
+            dialog.setConfirmText("Delete");
+            dialog.open();
+            dialog.addConfirmListener(event -> {
+                VaadinSession session1 = VaadinSession.getCurrent();
+                sessionUsername =  session1.getAttribute("username").toString();
+                user = userRepository.getByUsername(sessionUsername);
+                if (user == null) {
+                    Notification.show("User is NULL!!!");
+                    UI.getCurrent().close();
+                }
+                person = user.getPerson();
+                personRepository.delete(person);
+                Notification.show("Account was deleted successfully");
+                UI.getCurrent().navigate("/loginA");
+
+            });
+        });
+
+
+        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel, delButton, shirtDetail);
     }
 }
