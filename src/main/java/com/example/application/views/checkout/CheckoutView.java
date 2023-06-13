@@ -163,6 +163,7 @@ public class CheckoutView extends Div {
         name.setRequiredIndicatorVisible(true);
         name.setPattern("[\\p{L} \\-]+");
         name.addClassNames(Margin.Bottom.SMALL);
+        name.setPlaceholder("Nume Prenume");
 
         email.setRequiredIndicatorVisible(true);
         email.addClassNames(Margin.Bottom.SMALL);
@@ -233,6 +234,7 @@ public class CheckoutView extends Div {
         cardHolder.setRequiredIndicatorVisible(true);
         cardHolder.setPattern("[\\p{L} \\-]+");
         cardHolder.addClassNames(Margin.Bottom.SMALL);
+        cardHolder.setPlaceholder("NUME PRENUME");
 
         securityCode.setRequiredIndicatorVisible(true);
         securityCode.setPattern("[0-9]{3,4}");

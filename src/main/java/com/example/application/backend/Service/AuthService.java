@@ -13,33 +13,22 @@ import com.example.application.views.cursa10km.Cursa10kmView;
 import com.example.application.views.cursa21km.Cursa21KmView;
 import com.example.application.views.cursa42km.Cursa42KmView;
 import com.example.application.views.cursacopii.CursaCopiiView;
+import com.example.application.views.grid.GridView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfDocument;
-import com.itextpdf.text.pdf.PdfWriter;
 import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
 
 @Service
 public class AuthService {
-
-
     public class AuthException extends Exception {
-
     }
     private final UserRepository userRepository;
-
     private final PersonRepository personRepository;
-
     private final Person person = new Person();
 
     public AuthService(UserRepository userRepository, PersonRepository personRepository) {
@@ -51,7 +40,6 @@ public class AuthService {
         User user = userRepository.getByUsername(username);
         if(user != null && user.checkPassword(password)) {
             createRoutes(user.getRole());
-
         } else {
             throw new AuthException();
         }
@@ -71,7 +59,7 @@ public class AuthService {
 
         else if (role.equals(Role.ADMIN)) {
             RouteConfiguration.forSessionScope().setRoute("/home", HomeView.class, MainLayout.class);
-            RouteConfiguration.forSessionScope().setRoute("/profile", ProfileView.class, MainLayout.class);
+            RouteConfiguration.forSessionScope().setRoute("/grid", GridView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);
@@ -91,8 +79,10 @@ public class AuthService {
         person.setShirtSize(shirtSize);
         person.setRace(race);
 
+
         User user = new User(userName, password, Role.USER);
         person.setUser(user);
+
         VaadinSession.getCurrent().setAttribute("username", userName);
         VaadinSession.getCurrent().setAttribute("person", person);
 
