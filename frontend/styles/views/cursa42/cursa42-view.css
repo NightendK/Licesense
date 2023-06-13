@@ -1,0 +1,49 @@
+#date {
+    font-size: 23px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#startTime {
+    font-size: 23px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#distance {
+    font-size: 23px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#limitTime {
+    font-size: 23px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#startLoc {
+    font-size: 23px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#raceMap {
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 0px;
+    margin-left: 700px;
+}
+
+#raceImage {
+    margin-right: 0px;
+    margin-left: 200px;
+}
