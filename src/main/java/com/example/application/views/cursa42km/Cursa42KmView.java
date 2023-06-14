@@ -28,9 +28,9 @@ public class Cursa42KmView extends VerticalLayout {
     private static int SECONDS_IN_A_DAY = 24 * 60 * 60;
     private Label counter = new Label();
     private Label daysField = new Label();
-    private TextField hoursField = new TextField();
-    private TextField minField = new TextField();
-    private TextField secField = new TextField();
+    private Label hoursField = new Label();
+    private Label minField = new Label();
+    private Label secField = new Label();
 
     public Cursa42KmView() {
 
@@ -78,9 +78,9 @@ public class Cursa42KmView extends VerticalLayout {
         marathonDay.set(Calendar.YEAR, 2023);
 
         daysField.setId("daysField");
-        hoursField.setLabel("Hours");
-        minField.setLabel("Minutes");
-        secField.setLabel("Seconds");
+        hoursField.setId("hoursField");
+        minField.setId("minField");
+        secField.setId("secField");
 
         ui.setPollInterval(1000);
         ui.addPollListener(e -> {
@@ -99,15 +99,41 @@ public class Cursa42KmView extends VerticalLayout {
            /* String date = new String("Days:" + days.toString() + "  hours:" + hours.toString() + "  minutes:" + minutes.toString() + "  seconds:" + seconds.toString());
             counter.setText(date);*/
 
-            daysField.setText(days.toString() + " \n Days");;
-            hoursField.setValue(hours.toString());
-            minField.setValue(minutes.toString());
-            secField.setValue(seconds.toString());
+            daysField.setText(days.toString());
+            hoursField.setText(hours.toString());
+            minField.setText(minutes.toString());
+            secField.setText(seconds.toString());
+
+            counter.setText(days.toString() + " : " + hours.toString() + " : " +
+                            minutes.toString() + " : " + seconds.toString());
 
         });
 
-        horizontalLayout.add(daysField, hoursField, minField, secField);
+        Label timeTitle = new Label();
+        timeTitle.setText("\n\nCountdown");
+        timeTitle.setId("countdown");
+        add(timeTitle);
+        horizontalLayout.add(counter);
         add(horizontalLayout);
+
+        Label daysLabel = new Label();
+        daysLabel.setId("daysLabel");
+        daysLabel.setText("Days");
+
+        Label hoursLabel = new Label();
+        hoursLabel.setId("hoursLabel");
+        hoursLabel.setText("Hours");
+
+        Label minutesLabel = new Label();
+        minutesLabel.setId("minutesLabel");
+        minutesLabel.setText("Minutes");
+
+        Label secondsLabel = new Label();
+        secondsLabel.setId("secondsLabel");
+        secondsLabel.setText("Seconds");
+
+
+        add(daysLabel, hoursLabel, minutesLabel, secondsLabel);
 
 
     }
