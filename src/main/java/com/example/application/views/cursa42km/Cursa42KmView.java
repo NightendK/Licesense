@@ -96,8 +96,6 @@ public class Cursa42KmView extends VerticalLayout {
             Long minutes = (secondsDay / 60) % 60;
             Long hours = (secondsDay / 3600);
 
-           /* String date = new String("Days:" + days.toString() + "  hours:" + hours.toString() + "  minutes:" + minutes.toString() + "  seconds:" + seconds.toString());
-            counter.setText(date);*/
 
             daysField.setText(days.toString());
             hoursField.setText(hours.toString());
