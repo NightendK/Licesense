@@ -47,3 +47,65 @@
     margin-right: 0px;
     margin-left: 200px;
 }
+
+#timerLayout {
+    color: #212f43;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Times New Roman";
+}
+
+#counter {
+    margin-right: 0px;
+    margin-left: 515px;
+}
+
+#countdown {
+    font-size: 50px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 0px;
+    margin-left: 600px;
+}
+
+#daysLabel {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    margin-right: 0px;
+    margin-left: 530px;
+    margin-top: -20px;
+}
+
+#hoursLabel {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    margin-right: 0px;
+    margin-left: 655px;
+    margin-top: -58px;
+}
+
+#minutesLabel{
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    margin-right: 0px;
+    margin-left: 732px;
+    margin-top: -58px;
+}
+
+#secondsLabel {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+    margin-right: 0px;
+    margin-left: 829px;
+    margin-top: -56px;
+}
