@@ -9,6 +9,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
@@ -25,11 +26,16 @@ import com.vaadin.flow.server.VaadinSession;
 
 
 @Route(value = "/login")
-@RouteAlias(value = "")
+//@RouteAlias(value = "")
 @PageTitle("Login")
 @CssImport("./styles/views/login/login-view.css")
 public class LoginView extends Composite<LoginOverlay> {
+
+    Label title = new Label();
         public LoginView(AuthService authService) {
+
+            title.setId("loginTitle");
+            title.setText("Road Runner Race");
 
         LoginI18n log = LoginI18n.createDefault();
         LoginI18n.Form logForm = log.getForm();
@@ -38,8 +44,8 @@ public class LoginView extends Composite<LoginOverlay> {
 
         LoginOverlay loginOverlay = getContent();
         loginOverlay.setI18n(log);
-        loginOverlay.setTitle("Marathon App");
-        loginOverlay.setDescription("Let's run");
+        loginOverlay.setTitle(title);
+        loginOverlay.setDescription("Welcome to our Web Application");
         loginOverlay.setOpened(true);
 
         addClassName("login-overlay-view");
@@ -61,7 +67,6 @@ public class LoginView extends Composite<LoginOverlay> {
             loginOverlay.close();
             UI.getCurrent().navigate(RegisterView.class);
         });
-
     }
 
 

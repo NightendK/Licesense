@@ -27,7 +27,7 @@ public class GridView extends HorizontalLayout {
         GridCrud<Person> personGrid = new GridCrud<>(Person.class, this.personService);
         personGrid.setSizeFull();
 
-        personGrid.getGrid().setColumns("id", "firstName", "lastName", "email", "sex", "race", "shirtSize");
+        personGrid.getGrid().setColumns("firstName", "lastName", "email", "sex", "race", "shirtSize");
         personGrid.setUpdateOperationVisible(true);
         personGrid.setDeleteOperationVisible(true);
         personGrid.setAddOperationVisible(false);
