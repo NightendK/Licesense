@@ -1,26 +1,17 @@
-.login-view {
-    background-image: url("../../../src/main/resources/META-INF/resources/images/run.jpg");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    height: 500px
-}
-
 :host {
     display: block;
     padding: var(--lumo-space-m) var(--lumo-space-l);
-}
-
-.login-overlay-view{
-    background-image: url("../../../src/main/resources/META-INF/resources/images/run.jpg");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    height: 500px;
 }
 
 .login-overlay-view vaadin-login-overlay{
     align-items: center;
     display: flex;
     max-width: 300px;
+}
+
+#loginTitle {
+    font-family: "Arial";
+    color: #DDDDDD;
+    font-size: 45px;
+    font-weight: bold;
 }
