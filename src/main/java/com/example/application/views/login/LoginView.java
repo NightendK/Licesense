@@ -26,7 +26,7 @@ import com.vaadin.flow.server.VaadinSession;
 
 
 @Route(value = "/login")
-@RouteAlias(value = "")
+//@RouteAlias(value = "")
 @PageTitle("Login")
 @CssImport("./styles/views/login/login-view.css")
 public class LoginView extends Composite<LoginOverlay> {

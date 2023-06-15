@@ -1,6 +1,7 @@
 package com.example.application.views.home;
 
 import com.example.application.views.MainLayout;
+import com.example.application.views.firstHome.FirstHomeView;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -19,6 +20,7 @@ import jakarta.annotation.security.PermitAll;
 
 @PageTitle("Home")
 @CssImport("./styles/views/home/home-view.css")
+@Route(value = "/home", layout = FirstHomeView.class)
 public class HomeView extends VerticalLayout {
 
     private Image raceLogo = new Image();
