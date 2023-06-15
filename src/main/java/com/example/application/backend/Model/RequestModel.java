@@ -13,29 +13,29 @@ public class RequestModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Request ID")
     private Long id;
 
-    @Column(name = "firstName_New")
+    @Column(name = "FirstName")
     private String firstName;
 
-    @Column(name = "lastName_New")
+    @Column(name = "LastName")
     private String lastName;
 
-    @Column(name = "email_New")
+    @Column(name = "Email")
     private String email;
 
-    @Column(name = "shirtSize_New")
+    @Column(name = "ShirtSize")
     @Enumerated(EnumType.STRING)
     private ShirtSize shirtSize;
 
-    @Column(name = "userName_New")
+    @Column(name = "Username")
     private String username;
 
-    @Column(name = "userId")
+    @Column(name = "User ID")
     private Long userId;
 
-    @Column(name = "personId")
+    @Column(name = "Person ID")
     private Long personId;
 
     public Long getId() {
