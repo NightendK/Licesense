@@ -57,7 +57,7 @@ public class FirstHomeView extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("Marathon App");
+        H1 appName = new H1("Road Runner Race");
         appName.setId("appName");
         Header header = new Header(appName);
 

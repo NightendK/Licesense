@@ -51,10 +51,12 @@ import com.vaadin.flow.theme.lumo.LumoUtility.TextColor;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -459,6 +461,18 @@ public class CheckoutView extends Div {
                 "City : " + city.getValue() + "\n" +
                 "Address : " + address.getValue() + "\n", contentFont));
         document.add(fifthContent);
+
+        try {
+            com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance("RaceLogoV2.png");
+
+            float documentWidth = document.getPageSize().getWidth() - document.leftMargin() - document.rightMargin();
+            float documentHeight = document.getPageSize().getHeight() - document.topMargin() - document.bottomMargin();
+
+            image.scaleToFit(documentWidth, documentHeight);
+            document.add(image);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         document.close();
     }
