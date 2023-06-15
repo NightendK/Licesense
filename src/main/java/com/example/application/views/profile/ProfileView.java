@@ -6,6 +6,7 @@ import com.example.application.backend.Model.Person;
 import com.example.application.backend.Model.User;
 import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Repository.UserRepository;
+import com.example.application.views.request.RequestView;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.button.Button;
@@ -39,7 +40,7 @@ public class ProfileView extends VerticalLayout {
     private Avatar avatar = new Avatar();
     private Image shirt = new Image();
     private Button delButton = new Button("Delete Acccount");
-    private Button updateButton = new Button("Modify");
+    private Button updateButton = new Button("Request Changes");
 
     public ProfileView(UserRepository userRepository, PersonRepository personRepository) {
 
@@ -155,7 +156,11 @@ public class ProfileView extends VerticalLayout {
             });
         });
 
+        updateButton.addClickListener(event -> {
+            UI.getCurrent().navigate(RequestView.class);
+        });
 
-        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel, delButton, shirtDetail);
+
+        add(horizontalLayout, nameLabel, emailLabel, kitLabel, raceLabel, delButton, updateButton, shirtDetail);
     }
 }

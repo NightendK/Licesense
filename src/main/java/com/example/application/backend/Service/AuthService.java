@@ -17,6 +17,7 @@ import com.example.application.views.grid.GridView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
+import com.example.application.views.request.RequestGridView;
 import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import org.springframework.stereotype.Service;
@@ -60,6 +61,7 @@ public class AuthService {
         else if (role.equals(Role.ADMIN)) {
             RouteConfiguration.forSessionScope().setRoute("/home", HomeView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/grid", GridView.class, MainLayout.class);
+            RouteConfiguration.forSessionScope().setRoute("/requestGrid", RequestGridView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/42km", Cursa42KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/21km", Cursa21KmView.class, MainLayout.class);
             RouteConfiguration.forSessionScope().setRoute("/10km", Cursa10kmView.class, MainLayout.class);

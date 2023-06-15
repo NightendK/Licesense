@@ -16,21 +16,27 @@ public class RequestModel {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstName_New")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "lastName_New")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(name = "email_New")
     private String email;
 
-    @Column(name = "shirtSize")
+    @Column(name = "shirtSize_New")
     @Enumerated(EnumType.STRING)
     private ShirtSize shirtSize;
 
-    @Column(name = "userName")
+    @Column(name = "userName_New")
     private String username;
+
+    @Column(name = "userId")
+    private Long userId;
+
+    @Column(name = "personId")
+    private Long personId;
 
     public Long getId() {
         return id;
@@ -78,5 +84,21 @@ public class RequestModel {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(Long personId) {
+        this.personId = personId;
     }
 }

@@ -11,6 +11,7 @@ import com.example.application.views.grid.GridView;
 import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.profile.ProfileView;
+import com.example.application.views.request.RequestGridView;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -45,12 +46,14 @@ public class MainLayout extends AppLayout {
     private final AppNavItem logout = new AppNavItem("Logout", LogoutView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem profile = new AppNavItem("Profile", ProfileView.class, profileIcon);
     private final AppNavItem grid = new AppNavItem("Grid", GridView.class, LineAwesomeIcon.COG_SOLID.create());
+    private final AppNavItem gridRequest = new AppNavItem("Requests", RequestGridView.class, LineAwesomeIcon.COG_SOLID.create());
 
     public MainLayout(AuthService authService) {
 
         homeItem.setId("homeNav");
         profile.setId("idNav");
         grid.setId("grid");
+        gridRequest.setId("grid");
         profileIcon.setId("profileIcon");
         race42Item.setId("race42Nav");
         race21Item.setId("race21Nav");
@@ -94,6 +97,7 @@ public class MainLayout extends AppLayout {
         if (username.equals("root")) {
             nav.addItem(homeItem);
             nav.addItem(grid);
+            nav.addItem(gridRequest);
             nav.addItem(race42Item);
             nav.addItem(race21Item);
             nav.addItem(race10Item);
