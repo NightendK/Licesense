@@ -3,6 +3,7 @@ package com.example.application.views.cursa10km;
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
@@ -132,6 +133,25 @@ public class Cursa10kmView extends VerticalLayout {
 
 
         add(daysLabel, hoursLabel, minutesLabel, secondsLabel);
+
+        Details details = new Details();
+        Label pace = new Label("Pace Recommendations");
+        pace.setId("paceLabel");
+        details.setSummary(pace);
+
+        VerticalLayout paceLayout = new VerticalLayout();
+        paceLayout.setSizeFull();
+        paceLayout.setSpacing(true);
+        paceLayout.setId("pace");
+
+        paceLayout.add(new Label("For a time of 3:00:00, we recommend a pace of 6:00 min / km"));
+        paceLayout.add(new Label("For a time of 3:30:00, we recommend a pace of 6:45 min / km"));
+        paceLayout.add(new Label("For a time of 4:00:00, we recommend a pace of 7:30 min / km"));
+        paceLayout.add(new Label("For a time of 4:30:00, we recommend a pace of 8:25 min / km"));
+        paceLayout.add(new Label("For a time of 5:00:00, we recommend a pace of 9:40 min / km"));
+
+        details.addContent(paceLayout);
+        add(details);
     }
 
 }

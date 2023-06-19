@@ -76,7 +76,7 @@
     color: #212f43;
     font-style: normal;
     margin-right: 0px;
-    margin-left: 530px;
+    margin-left: 515px;
     margin-top: -20px;
 }
 
@@ -86,7 +86,7 @@
     color: #212f43;
     font-style: normal;
     margin-right: 0px;
-    margin-left: 655px;
+    margin-left: 610px;
     margin-top: -58px;
 }
 
@@ -96,7 +96,7 @@
     color: #212f43;
     font-style: normal;
     margin-right: 0px;
-    margin-left: 755px;
+    margin-left: 695px;
     margin-top: -58px;
 }
 
@@ -106,6 +106,20 @@
     color: #212f43;
     font-style: normal;
     margin-right: 0px;
-    margin-left: 870px;
+    margin-left: 800px;
     margin-top: -56px;
+}
+
+#pace {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
+}
+
+#paceLabel {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    color: #212f43;
+    font-style: normal;
 }
