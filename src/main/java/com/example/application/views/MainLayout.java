@@ -39,10 +39,10 @@ public class MainLayout extends AppLayout {
     @Serial
     private static final long serialVersionUID = 1113799434508676095L;
     private final AppNavItem homeItem = new AppNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create());
-    private final AppNavItem race42Item = new AppNavItem("Cursa 42Km", Cursa42KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
-    private final AppNavItem race21Item = new AppNavItem("Cursa 21Km", Cursa21KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
-    private final AppNavItem race10Item = new AppNavItem("Cursa 10Km", Cursa10kmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
-    private final AppNavItem raceChItem = new AppNavItem("Cursa Copii", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create());
+    private final AppNavItem race42Item = new AppNavItem("Race 42Km", Cursa42KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
+    private final AppNavItem race21Item = new AppNavItem("Race 21Km", Cursa21KmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
+    private final AppNavItem race10Item = new AppNavItem("Race 10Km", Cursa10kmView.class, LineAwesomeIcon.RUNNING_SOLID.create());
+    private final AppNavItem raceChItem = new AppNavItem("Children's Race", CursaCopiiView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem logout = new AppNavItem("Logout", LogoutView.class, LineAwesomeIcon.RUNNING_SOLID.create());
     private final AppNavItem profile = new AppNavItem("Profile", ProfileView.class, profileIcon);
     private final AppNavItem grid = new AppNavItem("Grid", GridView.class, LineAwesomeIcon.COG_SOLID.create());

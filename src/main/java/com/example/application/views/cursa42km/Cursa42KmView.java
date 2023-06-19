@@ -15,7 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-@PageTitle("Cursa 42Km")
+@PageTitle("Race 42Km")
 @CssImport("./styles/views/cursa42/cursa42-view.css")
 //@Route(value = "42km", layout = MainLayout.class)
 public class Cursa42KmView extends VerticalLayout {

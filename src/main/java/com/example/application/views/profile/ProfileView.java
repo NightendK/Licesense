@@ -19,10 +19,11 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
 
-
+@PageTitle("Profile")
 @Route("/profile")
 @CssImport("./styles/views/profile/profile-view.css")
 public class ProfileView extends VerticalLayout {

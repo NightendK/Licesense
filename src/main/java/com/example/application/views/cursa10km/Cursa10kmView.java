@@ -17,7 +17,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import java.util.Calendar;
 import java.util.Date;
 
-@PageTitle("Cursa 10km")
+@PageTitle("Race 10km")
 @CssImport("./styles/views/cursa42/cursa42-view.css")
 //@Route(value = "10km", layout = MainLayout.class)
 public class Cursa10kmView extends VerticalLayout {

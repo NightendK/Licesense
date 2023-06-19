@@ -16,7 +16,7 @@ import org.vaadin.crudui.crud.impl.GridCrud;
 import org.vaadin.crudui.form.CrudFormFactory;
 
 
-@PageTitle("GridView")
+@PageTitle("Grid")
 @Route("/grid")
 public class GridView extends HorizontalLayout {
     private static PersonService personService;

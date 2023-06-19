@@ -16,7 +16,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import java.util.Calendar;
 import java.util.Date;
 
-@PageTitle("Cursa Copii")
+@PageTitle("Children's Race")
 @CssImport("./styles/views/cursa42/cursa42-view.css")
 //@Route(value = "copii", layout = MainLayout.class)
 public class CursaCopiiView extends VerticalLayout {

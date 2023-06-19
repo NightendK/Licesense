@@ -9,7 +9,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.vaadin.crudui.crud.impl.GridCrud;
 
-@PageTitle("RequestGridView")
+@PageTitle("Request Grid")
 @Route("/requestGrid")
 public class RequestGridView extends VerticalLayout {
     private final RequestService requestService;

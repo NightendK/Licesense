@@ -23,10 +23,10 @@ public class RegisterView extends AppLayout {
 
     AppLayout appLayout = new AppLayout();
 
-    private Tab cursa42 = new Tab(new RouterLink("Cursa 42Km", SignInView42.class));
-    private Tab cursa21 = new Tab(new RouterLink("Cursa 21Km", SignInView21.class));
-    private Tab cursa10 = new Tab(new RouterLink("Cursa 10Km", SignInView10.class));
-    private Tab cursaCopii = new Tab(new RouterLink("Cursa copii", SignInViewChildren.class));
+    private Tab cursa42 = new Tab(new RouterLink("Race 42Km", SignInView42.class));
+    private Tab cursa21 = new Tab(new RouterLink("Race 21Km", SignInView21.class));
+    private Tab cursa10 = new Tab(new RouterLink("Race 10Km", SignInView10.class));
+    private Tab cursaCopii = new Tab(new RouterLink("Children's Race", SignInViewChildren.class));
     RegisterView() {
 
         Footer footer = new Footer();
