@@ -40,10 +40,14 @@ public class AuthService {
 
     public void authenticate(String username, String password) throws AuthException {
         User user = userRepository.getByUsername(username);
+        if (user == null) {
+            throw new AuthException();
+        }
         if (username.equals(user.getUsername())) {
             if(user != null && user.checkPassword(password)) {
                 createRoutes(user.getRole());
-            } else {
+            }
+            else {
                 throw new AuthException();
             }
         }
