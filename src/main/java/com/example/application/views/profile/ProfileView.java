@@ -6,6 +6,7 @@ import com.example.application.backend.Model.Person;
 import com.example.application.backend.Model.User;
 import com.example.application.backend.Repository.PersonRepository;
 import com.example.application.backend.Repository.UserRepository;
+import com.example.application.views.firstHome.FirstHomeView;
 import com.example.application.views.request.RequestView;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.avatar.Avatar;
@@ -152,7 +153,8 @@ public class ProfileView extends VerticalLayout {
                 person = user.getPerson();
                 personRepository.delete(person);
                 Notification.show("Account was deleted successfully");
-                UI.getCurrent().navigate("/loginA");
+                UI.getCurrent().getPage().setLocation("/home");
+                VaadinSession.getCurrent().getSession().invalidate();
 
             });
         });
